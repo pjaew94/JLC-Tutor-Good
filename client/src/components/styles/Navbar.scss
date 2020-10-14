@@ -1,0 +1,157 @@
+@import "config";
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    width: 20vw;
+    padding: 3% 5%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    .navbar_logo {
+        display: flex;
+        @extend %main_medium;
+
+        .hexagon {
+            font-size: 2rem;
+            color: #CC5737;
+        }
+
+        span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        list-style-type: none;
+        transform: translateY(-170px);
+
+        li {
+            @extend %minor_small;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: auto;
+            width: 120px;
+            text-decoration: none;
+
+            margin-bottom: 25px;
+            cursor: pointer;
+
+            .link {
+                font-size: 1rem;
+                color: $gray_text;
+                transition: 0.2s all ease-in;
+
+                .icon {
+                    font-size: 1.3rem;
+                    margin-right: 20px;
+                    transform: translateY(5px);
+                }
+
+                &:hover {
+                    color: black;
+                }
+            }
+
+            .selected {
+                color: black;
+            }
+        }
+    }
+
+    .user {
+        @extend %center_flex;
+        height: auto;
+        width: 100%;
+        position: relative;
+
+        .show_logout,
+        .hide_logout {
+            @extend %center_flex;
+           
+            height: 30px;
+            width: 120px;
+            transition: 0.3s all ease-in;
+            position: absolute;
+            top: 20%;
+            left: 35%;
+            z-index: 1;
+            a {
+                @extend %minor_small;
+                transition: 0.3s all ease-in;
+                font-size: 1rem;
+                color: $gray_text;
+
+                &:hover {
+                    color: black;
+                }
+
+                .icon {
+                    margin-left: 8px;
+                    transform: translateY(2px);
+                }
+            }
+        }
+
+        .show_logout {
+            position: absolute;
+            left: 100%;
+            z-index: 1;
+        }
+
+        .user_block {
+            display: flex;
+            height: auto;
+            width: 100%;
+            transition: 0.2s all ease-in;
+            padding: 5px;
+            border-radius: 10px;
+            background: white;
+            z-index: 2;
+
+            &:hover {
+                @extend %box_shadow;
+            }
+
+            img {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .user_info {
+                margin-left: 20px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                @extend %minor_small;
+                font-size: 0.8rem;
+                font-weight: 700;
+
+                span {
+                    color: $gray_text;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}

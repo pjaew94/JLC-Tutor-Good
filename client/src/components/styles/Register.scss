@@ -1,0 +1,171 @@
+@import "config";
+
+.admin_register {
+    @extend %center_flex;
+    height: 100vh;
+    width: 100vw;
+
+    .container {
+        @extend %center_flex;
+        height: 70vh;
+        width: 65vw;
+        border-radius: 15px;
+        box-shadow: 0 1px 15px -10px rgb(148, 148, 148);
+
+        .form_container {
+            @extend %space_around_flex;
+            flex-direction: column;
+            height: 60%;
+            width: 50%;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+
+            .header_container {
+                @extend %center_flex;
+                width: 70%;
+                padding-bottom: 10px;
+                border-bottom: 1px solid black;
+
+                .header {
+                    font-family: "Raleway", sans-serif;
+                    font-weight: 300;
+                    font-size: 2rem;
+                    // margin-bottom: 50px;
+                }
+            }
+
+            .admin_form {
+                @extend %center_flex;
+                flex-direction: column;
+                height: 70%;
+                width: 70%;
+                .inner {
+                    height: 80%;
+                    width: 100%;
+
+                    .form_upper,
+                    .form_lower {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 20px;
+                    }
+
+                    .form_group {
+                        display: flex;
+                        align-items: center;
+                        width: 47%;
+                        height: 40px;
+
+                        input {
+                            height: 100%;
+                            width: 100%;
+                            font-family: "Open Sans", sans-serif;
+                            font-weight: 300;
+                            font-size: 0.8rem;
+                            text-align: center;
+                            // border: 1px solid rgb(170, 169, 169);
+                            border: none;
+                            background: rgb(247, 247, 247);
+                            border-radius: 5px;
+                            outline: none;
+                            transition: all 0.5s ease-in;
+
+                            &:focus {
+                                border: none;
+                                background: rgb(235, 235, 235);
+
+                                &::placeholder {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .select_container {
+                        @extend %space_between_flex;
+                        width: 100%;
+                        margin-bottom: 10px;
+
+                        select {
+                            font-family: "Open Sans", sans-serif;
+                            font-weight: 300;
+                            font-size: 0.7rem;
+                            width: 47%;
+                            border: 1px solid rgb(170, 169, 169);
+                            border-radius: 5px;
+                            padding: 5px 0;
+                            outline: none;
+
+                            option {
+                                font-family: "Open Sans", sans-serif;
+                                font-weight: 300;
+                                font-size: 0.7rem;
+                            }
+                        }
+
+                        h3 {
+                            width: 47%;
+                            font-family: "Open Sans", sans-serif;
+                            font-weight: 300;
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+
+
+
+                .button {
+                    font-family: "Raleway", sans-serif;
+                    font-weight: 300;
+                    font-size: 1rem;
+                    height: 60px;
+                    width: 120px;
+                    border: none;
+                    background: #fad6d6;
+                    border-radius: 5px;
+                    outline: none;
+                    cursor: pointer;
+                    transition: 0.4s all ease-in;
+                    
+
+                    &:hover {
+                        background: #ffb2b2;
+                    }
+                }
+
+                .redirect_login {
+                    font-family: "Open Sans", sans-serif;
+                    font-weight: 300;
+                    font-size: 0.7rem;
+                    transform: translateY(10px);
+
+                    .small_link {
+                        font-family: "Open Sans", sans-serif;
+                        font-weight: 300;
+                        font-size: 0.7rem;
+                        transition: 0.2s all ease-in;
+
+                        &:hover {
+                            color: #ffb2b2;
+                        }
+    
+                    }
+                }
+            }
+        }
+
+        .svg_container {
+            @extend %center_flex;
+            height: 100%;
+            width: 50%;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background: #ecfbfc;
+
+            img {
+                height: 60%;
+                width: auto;
+            }
+        }
+    }
+}

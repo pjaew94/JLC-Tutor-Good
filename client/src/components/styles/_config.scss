@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+// Colors
+$gray-text: #A9ABA9;
+
+
+// Flex configs
+%center_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%space_between_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%space_around_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+%main_large {
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+%main_medium {
+    font-family: 'Arvo', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+%minor_small {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+
+%box_shadow {
+    box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+}

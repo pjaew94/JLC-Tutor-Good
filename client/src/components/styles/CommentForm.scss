@@ -1,0 +1,44 @@
+@import './config';
+
+.comment_form {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+
+    textarea {
+        padding: 5px;
+        height: 50px;
+        @extend %minor_small;
+        resize: none;
+        margin-bottom: 10px;
+    }
+
+    .button_container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        input {
+            height: 30px;
+            width: 100px;
+            background: none;
+            border: 1px solid rgb(85, 85, 85);
+            color: rgb(85, 85, 85);
+            border-radius: 15px;
+            @extend %main_medium;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.3s all ease-in-out;
+            outline: none;
+
+            &:hover {
+                background: rgb(85, 85, 85);
+                color: white;
+            }
+        }
+
+    }
+    
+}

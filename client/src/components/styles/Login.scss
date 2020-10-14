@@ -1,0 +1,198 @@
+@import "./config";
+
+.login {
+    @extend %center_flex;
+    height: 100vh;
+    width: 100vw;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    .background {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+
+        .backdrop {
+            position: relative;
+            background: #f9f9f9;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                width: auto;
+            }
+
+            .floating_svg {
+                top: 15%;
+                left: 3%;
+                height: 400px;
+            }
+            .sitting_svg {
+                bottom: 8%;
+                right: 5%;
+                height: 450px;
+            }
+
+            .blob1 {
+                height: 700px;
+                top: -30%;
+                left: 25%;
+            }
+
+            .blob2 {
+                height: 700px;
+                left: 35%;
+                bottom: -10%;
+            }
+
+            .blob3 {
+                height: 700px;
+                top: -15%;
+                right: 0%;
+            }
+
+            .blob4 {
+                height: 700px;
+                bottom: -25%;
+                left: -10%;
+            }
+        }
+    }
+
+    .login_content {
+        @extend %center_flex;
+        flex-direction: column;
+        height: 60%;
+        width: 30%;
+        box-shadow: 0 1px 15px -10px rgb(148, 148, 148);
+        border-radius: 10px;
+        background: white;
+        z-index: 2;
+
+        .logo {
+            @extend %center_flex;
+            height: 80px;
+            width: 50%;
+            background: #8675a9;
+            border-radius: 10px;
+
+            .hexagon {
+                font-size: 2.5rem;
+                margin-right: 10px;
+                color: #f9f9f9;
+            }
+            span {
+                font-family: "Raleway", sans-serif;
+                font-size: 2rem;
+                font-weight: 500;
+                color: #f9f9f9;
+            }
+        }
+
+        .login_form {
+            display: flex;
+
+            flex-direction: column;
+            height: 50%;
+            width: 50%;
+
+            .input_wrapper {
+                margin-top: 50px;
+                height: 40%;
+                width: 100%;
+
+                .form_group {
+                    height: 50px;
+                    width: 100%;
+                    margin-bottom: 20px;
+
+                    input {
+                        height: 100%;
+                        width: 100%;
+                        font-family: "Open Sans", sans-serif;
+                        font-weight: 300;
+                        font-size: 0.8rem;
+                        text-align: center;
+                        border: 1px solid rgb(170, 169, 169);
+                        box-shadow: 0 1px 15px -10px rgb(148, 148, 148);
+                        border: none;
+
+                        border-radius: 5px;
+                        outline: none;
+                        transition: all 0.5s ease-in;
+
+                        &:focus {
+                            border: none;
+                            background: #f9f9f9;
+
+                            &::placeholder {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .button_container {
+                @extend %center_flex;
+                height: 60px;
+                width: 100%;
+                margin-top: 60px;
+                .button {
+                    font-family: "Raleway", sans-serif;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: #ffd5cd;
+                    height: 60px;
+                    width: 120px;
+                    border: 2px solid #ffd5cd;
+                    background: white;
+        
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: 0.4s all ease-in;
+
+                    &:hover {
+                        background: #ffd5cd;
+                        color: white;
+                    }
+                }
+            }
+
+            .route_to_register {
+                @extend %center_flex;
+                margin-top: 15px;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 300;
+                font-size: 0.7rem;
+
+                .small_link {
+                    font-family: "Open Sans", sans-serif;
+                    font-weight: 300;
+                    font-size: 0.7rem;
+                    transition: 0.2s all ease-in;
+                    margin: 0 0.2rem;
+
+                    &:hover {
+                        color: #ffb2b2;
+                    }
+
+                }
+            }
+        }
+    }
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        .login_content {
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+}
