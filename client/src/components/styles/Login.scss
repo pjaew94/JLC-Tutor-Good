@@ -196,3 +196,43 @@
         }
     }
 }
+
+// Smart Phone Portrait
+@media screen and (max-width: 430px) {
+    .login {
+     
+        height: 100vh;
+        width: 100vw;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+
+        .background {
+            display: none;
+        }
+
+        .login_content {
+            height: 100%;
+            width: 100%;
+            box-shadow: none;
+
+            .logo {
+                width: 80%;
+            }
+
+            .login_form {
+                width: 80%;
+
+                .button_container {
+                    margin-top: 0px;
+
+                    .button {
+                        color: white;
+                        background: #ffd5cd;
+                    }
+                }
+            }
+        }
+    }
+}

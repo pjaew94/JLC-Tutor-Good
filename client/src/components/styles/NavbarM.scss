@@ -1,0 +1,116 @@
+@import "./config";
+
+.icon_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 8vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+    .hamburger {
+        @extend %space_between_flex;
+        flex-direction: column;
+        height: 25px;
+        width: 36px;
+        position: absolute;
+        right: 20px;
+        transition: 0.3s all ease-in-out;
+        
+
+
+        span {
+            height: 3px;
+            width: 100%;
+            background: rgb(97, 97, 97);
+        }
+    }
+
+    .hide_hamburger {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    .arrow_icon_container {
+        position: absolute;
+        transition: 0.3s all ease-in-out;
+        right: 20px;
+        transform: translateX(30px);
+        opacity: 0;
+        .icon {
+            font-size: 2rem;
+        }
+    }
+
+    .show_arrow {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.navbarM-container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+
+        .navbarM {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            list-style-type: none;
+            @extend %center_flex;
+            height: 100vh;
+            width: 70%;
+            position: absolute;
+            right: 0;
+            z-index: 3;
+            transform: translateX(110%);
+            transition: 0.3s all ease-in-out;
+            @extend %box_shadow;
+
+            li {
+                @extend %minor_small;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: auto;
+                width: 120px;
+                text-decoration: none;
+
+                margin-bottom: 25px;
+                cursor: pointer;
+
+                .link {
+                    font-size: 1rem;
+                    color: $gray_text;
+                    transition: 0.2s all ease-in;
+
+                    .icon {
+                        font-size: 1.3rem;
+                        margin-right: 20px;
+                        transform: translateY(5px);
+                    }
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+
+                .selected {
+                    color: black;
+                }
+            
+        }
+    }
+
+    .show_nav {
+        transform: translateX(0);
+ 
+    }
+}

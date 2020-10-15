@@ -171,3 +171,9 @@
     }
 
 }
+
+@media screen and (max-width: 430px) {
+    .recommendations {
+        display: none;
+    }
+}
