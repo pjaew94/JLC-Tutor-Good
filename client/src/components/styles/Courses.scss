@@ -199,11 +199,15 @@
     .courses_container {
         width: 100vw;
         left: 0;
-        height: auto;
-        overflow: hidden;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
         position: relative;
+        justify-content: flex-start;
+        align-items: flex-start;
      
         .courses {
+           
             width: 100%;
             height: auto;
             transition: 0.3s all ease-in-out;
@@ -236,6 +240,8 @@
             overflow: visible;
 
             .inner {
+                height: auto;
+                
                 .courses_post_form_container {
                     display: flex;
                     align-items: center;

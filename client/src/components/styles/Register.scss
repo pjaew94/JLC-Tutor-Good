@@ -124,6 +124,8 @@
                     outline: none;
                     cursor: pointer;
                     transition: 0.4s all ease-in;
+                    -webkit-appearance: none;
+                    -webkit-border-radius: 0;
 
                     &:hover {
                         background: #ffb2b2;
