@@ -191,7 +191,7 @@ const Courses = ({
         </div>
       </div>
     </div>
-    {mobileBackButton}
+    {isMobile && mobileBackButton}
     </Fragment>
   );
 };
