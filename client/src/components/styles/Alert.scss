@@ -6,6 +6,8 @@
     width: 100vw;
     top: 5%;
 
+    z-index: 10;
+
     .alert {
         @extend %center_flex;
         background: white;

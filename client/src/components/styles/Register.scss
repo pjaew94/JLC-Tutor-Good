@@ -173,18 +173,26 @@
 
 @media screen and (max-width: 430px) {
     .admin_register {
-
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        background: white;
+        
         .container {
-            height: 100vh;
+            height: 600px;
             width: 100vw;
+            box-shadow: none;
+            transform: translateY(-50px);
 
 
             .form_container {
+                height: 500px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                height: 80%;
+                justify-content: space-between;
                 width: 100%;
 
                 .header_container {
@@ -197,7 +205,7 @@
                 }
 
                 .admin_form {
-                    height: 60%;
+                    height: 450px;
 
                     .inner {
                         height: 100%;
@@ -207,6 +215,7 @@
                         .form_lower {
                             flex-direction: column;
                             margin-bottom: 0;
+                            margin-bottom: 30px;
                         }
 
                         .form_group {

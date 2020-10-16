@@ -200,22 +200,27 @@
 // Smart Phone Portrait
 @media screen and (max-width: 430px) {
     .login {
-     
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
         height: 100vh;
         width: 100vw;
         -webkit-user-select: none; /* Safari */
         -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* IE10+/Edge */
         user-select: none; /* Standard */
+        z-index: 5;
 
         .background {
             display: none;
         }
 
         .login_content {
-            height: 100%;
+            height: 500px;
             width: 100%;
             box-shadow: none;
+            justify-content: space-between;
 
             .logo {
                 width: 80%;
@@ -223,15 +228,23 @@
 
             .login_form {
                 width: 80%;
+                height: 400px;
+
 
                 .button_container {
                     margin-top: 0px;
+                    
+
 
                     .button {
                         color: white;
                         background: #ffd5cd;
                     }
                 }
+            }
+
+            .button_container {
+
             }
         }
     }

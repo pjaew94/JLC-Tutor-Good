@@ -47,6 +47,10 @@ const Register = ({
     e.preventDefault();
     if (password !== password2) {
       setAlert("Please make sure your passwords are matching.", "danger", 2000);
+    } else if(!user) {
+      if(!status) {
+        setAlert("Please select the subjects you are taking", "danger", 2000);
+      }
     } else {
       if (user && user.status === "Admin") {
         const config = {
