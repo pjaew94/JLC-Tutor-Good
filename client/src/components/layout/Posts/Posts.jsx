@@ -7,6 +7,7 @@ import {
   addComment,
   deletePost,
 } from "../../../actions/posts";
+import { useMediaQuery } from 'react-responsive'
 
 import {
   HiHeart,
@@ -42,6 +43,7 @@ const Posts = ({
   const [showComments, setShowComments] = useState(false);
   const [like, setLike] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+  const [showEditM, setShowEditM] = useState(false);
   const [showCommentForm, setShowCommentForm] = useState(false);
 
   useEffect(() => {
@@ -52,7 +54,12 @@ const Posts = ({
         }
         return like;
       });
+
+
   }, []);
+
+  // MediaQuery
+  const isMobile = useMediaQuery({ query: '(max-width: 430px)'})
 
   // Like post logic function
   const likePost = () => {
@@ -67,10 +74,16 @@ const Posts = ({
 
   // Check if user for delete to come up
   const checkAndShowEdit = () => {
-    if (userId === postUserId) {
+    if (userId === postUserId && !isMobile) {
       setShowEdit(true);
     }
   };
+
+  const checkAndShowEditM = () => {
+    if(userId === postUserId && isMobile) {
+      setShowEditM(!showEditM);
+    }
+  }
 
   const displayCommentForm = () => {
     setShowCommentForm(!showCommentForm);
@@ -78,7 +91,7 @@ const Posts = ({
   };
 
   const deleteEdit = (
-    <div className={`delete_edit ${showEdit && "slide_delete_edit"}`}>
+    <div className={`delete_edit ${showEdit && "slide_delete_edit"} ${showEditM && "slide_delete_edit_M"}`}>
       <div className="edit_container">
         <IconContext.Provider value={{ className: "icon" }}>
           <FiEdit3 />
@@ -99,8 +112,9 @@ const Posts = ({
       onMouseLeave={() => setShowEdit(false)}
     >
       {showEdit && deleteEdit}
+      {isMobile && deleteEdit}
       <div className="post">
-        <div className="left">
+        <div className="left" onClick={() => checkAndShowEditM()}>
           <h3 className="homework">
             <span>Homework:</span> {homework}
           </h3>

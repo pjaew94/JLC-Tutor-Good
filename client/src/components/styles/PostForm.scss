@@ -129,3 +129,33 @@
 
     }
 }
+
+// Iphone X
+@media screen and (max-width: 430px) {
+
+    .post_form_container {
+        .title {
+            width: 100%;
+
+            .add_icon {
+                box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+
+                &:hover {
+                    background: white;
+                    color: black;
+                }
+            }
+        }
+
+        .form {
+            .button_container {
+
+                .button {
+                    background: rgb(85, 85, 85);
+                    color: white;
+
+                }
+            }
+        }
+    }
+}

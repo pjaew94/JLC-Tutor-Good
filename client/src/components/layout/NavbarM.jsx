@@ -21,88 +21,109 @@ const NavbarM = ({ logout, auth: { isAuthenticated, loading, user } }) => {
 
   const setNav = (e) => {
     setNavState(e.target.name);
+    setShowNav(false);
   };
 
   return (
     <Fragment>
       <div className="icon_container">
-        <div className={`hamburger ${showNav && "hide_hamburger"}`} onClick={()=> {setShowNav(true)}}>
+        <div
+          className={`hamburger ${showNav && "hide_hamburger"}`}
+          onClick={() => {
+            setShowNav(true);
+          }}
+        >
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div className={`arrow_icon_container ${showNav && "show_arrow"}`} onClick={()=>{setShowNav(false)}}>
-        <IconContext.Provider value={{ className: "icon" }} >
-          <CgArrowRight />
-        </IconContext.Provider>
+        <div
+          className={`arrow_icon_container ${showNav && "show_arrow"}`}
+          onClick={() => {
+            setShowNav(false);
+          }}
+        >
+          <IconContext.Provider value={{ className: "icon" }}>
+            <CgArrowRight />
+          </IconContext.Provider>
         </div>
       </div>
       {!loading & isAuthenticated ? (
-        <nav className="navbarM-container">
-         
-            <ul className={`navbarM ${showNav && "show_nav"}`}>
+        <nav
+          className={`navbarM-container ${showNav && "show_nav"}`}
+          onClick={() => {
+            setShowNav(false);
+          }}
+        >
+          <ul className="navbarM">
+            <li>
+              <Link
+                className={`link ${navState === "profile" ? "selected" : null}`}
+                to="/profile"
+                name="profile"
+                onClick={setNav}
+              >
+                <IconContext.Provider value={{ className: "icon" }}>
+                  <AiOutlineUser />
+                </IconContext.Provider>
+                Profile
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`link ${navState === "courses" ? "selected" : null}`}
+                to="/courses"
+                name="courses"
+                onClick={setNav}
+              >
+                <IconContext.Provider value={{ className: "icon" }}>
+                  <AiOutlineBuild />
+                </IconContext.Provider>
+                Courses
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`link ${
+                  navState === "teachers" ? "selected" : null
+                }`}
+                to="/teachers"
+                name="teachers"
+                onClick={setNav}
+              >
+                <IconContext.Provider value={{ className: "icon" }}>
+                  <AiOutlineSolution />
+                </IconContext.Provider>
+                Teachers
+              </Link>
+            </li>
+            {!loading && user !== null && user.status === "Admin" ? (
               <li>
                 <Link
                   className={`link ${
-                    navState === "profile" ? "selected" : null
+                    navState === "registerNew" ? "selected" : null
                   }`}
-                  to="/profile"
-                  name="profile"
+                  to="/register"
+                  name="registerNew"
                   onClick={setNav}
                 >
-                  <IconContext.Provider value={{ className: "icon" }}>
-                    <AiOutlineUser />
-                  </IconContext.Provider>
-                  Profile
+                  Register New
                 </Link>
               </li>
-              <li>
-                <Link
-                  className={`link ${
-                    navState === "courses" ? "selected" : null
-                  }`}
-                  to="/courses"
-                  name="courses"
-                  onClick={setNav}
-                >
-                  <IconContext.Provider value={{ className: "icon" }}>
-                    <AiOutlineBuild />
-                  </IconContext.Provider>
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`link ${
-                    navState === "teachers" ? "selected" : null
-                  }`}
-                  to="/teachers"
-                  name="teachers"
-                  onClick={setNav}
-                >
-                  <IconContext.Provider value={{ className: "icon" }}>
-                    <AiOutlineSolution />
-                  </IconContext.Provider>
-                  Teachers
-                </Link>
-              </li>
-              {!loading && user !== null && user.status === "Admin" ? (
-                <li>
-                  <Link
-                    className={`link ${
-                      navState === "registerNew" ? "selected" : null
-                    }`}
-                    to="/register"
-                    name="registerNew"
-                    onClick={setNav}
-                  >
-                    Register New
-                  </Link>
-                </li>
-              ) : null}
-            </ul>
-          </nav>
+            ) : null}
+          </ul>
+
+            
+              <a className="logout_link" href="/" onClick={logout}>
+              <IconContext.Provider value={{ className: "icon" }}>
+                  <AiOutlineLogout />
+                </IconContext.Provider>
+                Log Out
+      
+              </a>
     
+
+        </nav>
       ) : null}
     </Fragment>
   );

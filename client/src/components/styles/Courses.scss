@@ -42,6 +42,7 @@
                         height: 50px;
                         width: 50px;
                         margin-bottom: 10px;
+                        z-index: 2;
                         .icon {
                             font-size: 1.5rem;
                         }
@@ -159,6 +160,7 @@
 
         }
 
+
         .inner {
             display: flex;
             flex-direction: column;
@@ -192,8 +194,94 @@
     }
 }
 
+// Iphone X
 @media screen and (max-width: 430px) {
     .courses_container {
-        display: none;
+        width: 100vw;
+        left: 0;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+     
+        .courses {
+            width: 100%;
+            height: auto;
+            transition: 0.3s all ease-in-out;
+           
+
+            .inner {
+                height: auto;
+                padding: 20px 20px;
+                background: none;
+
+                .course_card {
+                    box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+                }
+
+            }
+        }
+
+        .courses_slide {
+            transform: translateX(-100%);
+        }
+
+        .posts_container {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            height: auto;
+            transform: translateX(100%);
+            transition: 0.3s all ease-in-out;
+            overflow: visible;
+
+            .inner {
+                .courses_post_form_container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    position: relative;
+                }
+            }
+
+        
+        }
+
+        .posts_slide {
+            transform: translateX(0);
+        }
+
+
+    }
+
+    .posts_back_button_mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 80px;
+        position: absolute;
+        left: 20px;
+        top: -10px;
+        z-index: 5;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+
+        transition: 0.3s all ease-in-out;
+        opacity: 0;
+
+        h3 {
+            font-family: 'Arvo', serif;
+            font-weight: 400;
+            margin-left: 5px;
+        }
+
+    }
+
+    .show_mobile_back_button {
+        top: 20px;
+        left: 20px;
+        opacity: 1;
     }
 }

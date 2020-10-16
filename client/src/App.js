@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+
 import "./App.css";
 
 // Redux
@@ -29,6 +30,8 @@ const App = () => {
   useEffect(() => {
     store.dispatch(loadUser())
   }, [])
+
+
 
   return (
     <Provider store={store}>

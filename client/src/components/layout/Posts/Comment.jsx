@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { removeComment } from "../../../actions/posts";
+import { useMediaQuery } from 'react-responsive'
 
 import { HiOutlineTrash } from "react-icons/hi";
 import { FiEdit3 } from "react-icons/fi";
@@ -23,6 +24,9 @@ const Comment = ({
   removeComment
 }) => {
   const [showEdit, setShowEdit] = useState(false);
+
+   // MediaQuery
+   const isMobile = useMediaQuery({ query: '(max-width: 430px)'})
 
   const checkAndShowEdit = () => {
     if (

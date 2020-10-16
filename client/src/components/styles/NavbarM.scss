@@ -8,15 +8,15 @@
     width: 100vw;
     position: relative;
     overflow: hidden;
-    z-index: 2;
+    z-index: 5;
 
     .hamburger {
         @extend %space_between_flex;
         flex-direction: column;
         height: 25px;
         width: 36px;
-        position: absolute;
-        right: 20px;
+        position: fixed;
+        right: 30px;
         transition: 0.3s all ease-in-out;
         
 
@@ -36,7 +36,7 @@
     .arrow_icon_container {
         position: absolute;
         transition: 0.3s all ease-in-out;
-        right: 20px;
+        right: 30px;
         transform: translateX(30px);
         opacity: 0;
         .icon {
@@ -53,10 +53,16 @@
 .navbarM-container {
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
+    transform: translateX(110%);
+    transition: 0.3s all ease-in-out;
+    z-index: 4;
 
 
         .navbarM {
@@ -69,9 +75,8 @@
             width: 70%;
             position: absolute;
             right: 0;
-            z-index: 3;
-            transform: translateX(110%);
-            transition: 0.3s all ease-in-out;
+            z-index: 5;
+            background: white;
             @extend %box_shadow;
 
             li {
@@ -109,8 +114,42 @@
         }
     }
 
-    .show_nav {
-        transform: translateX(0);
- 
+
+    .logout_link{
+        position: absolute;
+        bottom: 50px;
+        right: 100px;
+        @extend %minor_small;
+        font-size: 1rem;
+        color: rgb(94, 94, 94);
+        text-decoration: none;
+        width: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 5;
+    }
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .navbarM-container {
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.show_nav {
+    transform: translateX(0);
+
+}
+
+
+@media screen and (min-width: 430px) {
+    .icon_container {
+        display: none;
+    }
+
+    .navbarM-container {
+        display: none;
     }
 }
