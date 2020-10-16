@@ -47,11 +47,7 @@ const Register = ({
     e.preventDefault();
     if (password !== password2) {
       setAlert("Please make sure your passwords are matching.", "danger", 2000);
-    } else if(!user) {
-      if(!status) {
-        setAlert("Please select the subjects you are taking", "danger", 2000);
-      }
-    } else {
+    }  else {
       if (user && user.status === "Admin") {
         const config = {
           headers: {
@@ -76,7 +72,12 @@ const Register = ({
           console.error(err.message);
         }
         // register({ name, email, password, status });
-      } else {
+      } else if(!studentSubjects) {
+     
+          setAlert("Please select the subjects you are taking", "danger", 2000);
+        
+      }
+      else {
 
         const status = "Student";
 
