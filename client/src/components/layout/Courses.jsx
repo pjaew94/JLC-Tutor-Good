@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
+import { Link, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
@@ -34,7 +35,6 @@ const Courses = ({
   }, []);
 
   const [currentSubject, setCurrentSubject] = useState("");
-  const [slideToPosts, setSlideToPosts] = useState(false);
 
   // Create new array of subjects to display
   let coursesSubjects = [];
@@ -67,22 +67,9 @@ const Courses = ({
     }
   };
 
-  const noPost = (
-    <div className="no_post_container">
-      <img src={coffeeGif} alt="Coffee Guy"></img>
-      <h1>Select one of the subjects to see the contents!</h1>
-    </div>
-  );
-
   const callPost = (subjectId) => {
     getSubjectPosts(subjectId);
     setCurrentSubject(subjectId);
-    setSlideToPosts(true);
-  };
-
-  const mobilePostBack = () => {
-    setSlideToPosts(false);
-    setCurrentSubject("");
   };
 
   // MediaQuery
@@ -97,101 +84,79 @@ const Courses = ({
       ) : null;
   }
 
-  const mobileBackButton = (
-    <div className={`posts_back_button_mobile ${slideToPosts && "show_mobile_back_button"}`} onClick={mobilePostBack}>
-      <IconContext.Provider value={{ className: "icon" }}>
-        <RiArrowGoBackLine />
-      </IconContext.Provider>
-      <h3>Back</h3>
-    </div>
-  );
+  // const mobileBackButton = (
+  //   <div className={`posts_back_button_mobile ${slideToPosts && "show_mobile_back_button"}`} onClick={mobilePostBack}>
+  //     <IconContext.Provider value={{ className: "icon" }}>
+  //       <RiArrowGoBackLine />
+  //     </IconContext.Provider>
+  //     <h3>Back</h3>
+  //   </div>
+  // );
 
   return loading && subjects === null && posts === null ? (
     <Spinner />
   ) : (
-    <Fragment >
-    <div className="courses_container">
-      <div className={`courses ${slideToPosts && "courses_slide"}`}>
-        <div className="inner">
-          {coursesSubjects &&
-            coursesSubjects.map((s) => {
-              return (
-                <div className="course_card" key={s._id}>
-                  <div className="icon_button_container">
-                    <div className={`icon_container ${s.instructorSubjects}`}>
-                      <IconContext.Provider value={{ className: "icon" }}>
-                        {getIcon(s.instructorSubjects)}
-                      </IconContext.Provider>
-                    </div>
-                    <div className="button_container">
-                      <button
-                        className={"course_button"}
-                        onClick={() => callPost(s.subjectId)}
-                      >
-                        <IconContext.Provider
-                          value={{
-                            className: `icon ${
-                              currentSubject === s.subjectId
-                                ? "current_icon"
-                                : null
-                            }`,
-                          }}
-                        >
-                          <BsArrowRight />
+    <Fragment>
+      <div className="courses_container">
+        <div className="courses">
+          <div className="inner">
+            {coursesSubjects &&
+              coursesSubjects.map((s) => {
+                return (
+                  <div className="course_card" key={s._id}>
+                    <div className="icon_button_container">
+                      <div className={`icon_container ${s.instructorSubjects}`}>
+                        <IconContext.Provider value={{ className: "icon" }}>
+                          {getIcon(s.instructorSubjects)}
                         </IconContext.Provider>
-                        <h3
-                          className={
-                            currentSubject === s.subjectId
-                              ? "current_text"
-                              : null
-                          }
+                      </div>
+                      <Link
+                        className="button_container"
+                        to={`/courses/${s.subjectId}`}
+                      >
+                        <button
+                          className={"course_button"}
+                          onClick={() => callPost(s.subjectId)}
                         >
-                          Current
-                        </h3>
-                      </button>
+                          <IconContext.Provider
+                            value={{
+                              className: `icon ${
+                                currentSubject === s.subjectId
+                                  ? "current_icon"
+                                  : null
+                              }`,
+                            }}
+                          >
+                            <BsArrowRight />
+                          </IconContext.Provider>
+                          <h3
+                            className={
+                              currentSubject === s.subjectId
+                                ? "current_text"
+                                : null
+                            }
+                          >
+                            Current
+                          </h3>
+                        </button>
+                      </Link>
                     </div>
+                    <h3 className="instructor">
+                      {s.instructorLast}, {s.instructorFirst}
+                    </h3>
+                    <h2 className="title">{s.subject}</h2>
+                    <h3 className="time">
+                      {s.startTime} - {s.endTime}
+                    </h3>
+                    <h3 className="info">{s.description}</h3>
                   </div>
-                  <h3 className="instructor">
-                    {s.instructorLast}, {s.instructorFirst}
-                  </h3>
-                  <h2 className="title">{s.subject}</h2>
-                  <h3 className="time">
-                    {s.startTime} - {s.endTime}
-                  </h3>
-                  <h3 className="info">{s.description}</h3>
-                </div>
-              );
-            })}
+                );
+              })}
+          </div>
         </div>
       </div>
 
-      <div className={`posts_container ${slideToPosts && "posts_slide"}`}>
-        <div className="inner">
-          {subjectPosts && postForm }
-          {arrangedSubjects.length > 0
-            ? arrangedSubjects.map((post) => {
-                return (
-                  <Posts
-                    postId={post._id}
-                    postUserId={post.user}
-                    name={post.name}
-                    homework={post.homework}
-                    due={post.due}
-                    date={post.date}
-                    likes={post.likes}
-                    comments={post.comments}
-                    key={post._id}
-                    userId={user._id}
-                    subject={currentSubject}
-                    userStatus={user.status}
-                  />
-                );
-              })
-            : noPost}
-        </div>
-      </div>
-    </div>
-    {isMobile && mobileBackButton}
+      {/* {isMobile && mobileBackButton} */}
     </Fragment>
   );
 };
@@ -203,6 +168,7 @@ Courses.propTypes = {
 
   auth: PropTypes.object.isRequired,
   subjects: PropTypes.object.isRequired,
+  posts: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({

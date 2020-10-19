@@ -7,7 +7,7 @@ import {
   addComment,
   deletePost,
 } from "../../../actions/posts";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from "react-responsive";
 
 import {
   HiHeart,
@@ -54,12 +54,10 @@ const Posts = ({
         }
         return like;
       });
-
-
   }, []);
 
   // MediaQuery
-  const isMobile = useMediaQuery({ query: '(max-width: 430px)'})
+  const isMobile = useMediaQuery({ query: "(max-width: 430px)" });
 
   // Like post logic function
   const likePost = () => {
@@ -80,10 +78,10 @@ const Posts = ({
   };
 
   const checkAndShowEditM = () => {
-    if(userId === postUserId && isMobile) {
+    if (userId === postUserId && isMobile) {
       setShowEditM(!showEditM);
     }
-  }
+  };
 
   const displayCommentForm = () => {
     setShowCommentForm(!showCommentForm);
@@ -91,7 +89,11 @@ const Posts = ({
   };
 
   const deleteEdit = (
-    <div className={`delete_edit ${showEdit && "slide_delete_edit"} ${showEditM && "slide_delete_edit_M"}`}>
+    <div
+      className={`delete_edit ${showEdit && "show_delete_edit"} ${
+        showEditM && "slide_delete_edit_M"
+      }`}
+    >
       <div className="edit_container">
         <IconContext.Provider value={{ className: "icon" }}>
           <FiEdit3 />
@@ -106,14 +108,14 @@ const Posts = ({
   );
 
   return (
-    <div
-      className="post_container"
-      onMouseEnter={() => checkAndShowEdit()}
-      onMouseLeave={() => setShowEdit(false)}
-    >
-      {showEdit && deleteEdit}
-      {isMobile && deleteEdit}
-      <div className="post">
+    <div className="post_container">
+      <div
+        className={`post ${showEdit && "minify"} ${subject}`}
+        onMouseEnter={() => checkAndShowEdit()}
+        onMouseLeave={() => setShowEdit(false)}
+      >
+        {showEdit && deleteEdit}
+        {isMobile && deleteEdit}
         <div className="left" onClick={() => checkAndShowEditM()}>
           <h3 className="homework">
             <span>Homework:</span> {homework}
@@ -131,7 +133,9 @@ const Posts = ({
             <div className="button_container">
               <button className="like_button" onClick={() => likePost()}>
                 <IconContext.Provider
-                  value={{ className: `icon ${like ? "liked" : "no_like"}` }}
+                  value={{
+                    className: `icon ${like ? "liked" : "no_like"}`,
+                  }}
                 >
                   {like ? <HiHeart /> : <HiOutlineHeart />}
                 </IconContext.Provider>

@@ -4,14 +4,14 @@
     @extend %center_flex;
     padding: 0% 2%;
     position: absolute;
-    width: 50vw;
+    width: 25vw;
     height: 100vh;
     left: 20vw;
 
     .courses {
         @extend %center_flex;
         padding: 0% 2%;
-        width: 50%;
+        width: 100%;
         height: 100%;
 
         .inner {
@@ -137,61 +137,7 @@
         }
     }
 
-    .posts_container {
-        @extend %center_flex;
-        padding: 0% 2%;
-        width: 50%;
-        height: 100%;
-        overflow-y: overlay;
-
-        &::-webkit-scrollbar  {
-            width: 2px;
-        
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: rgb(194, 194, 194);
-            border-radius: 10px;
-            outline: none;
-        }
-
-        &::-webkit-scrollbar-track {
-            margin: 100px 0;
-
-        }
-
-
-        .inner {
-            display: flex;
-            flex-direction: column;
-            height: 90vh;
-            width: 100%;
-            padding: 40px 15px;
-            border-radius: 20px;
-
-            .no_post_container {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                width: 100%;
-                height: 270px;
-                border-radius: 20px;
-                padding: 5%;
-                @extend %box_shadow;
-
-                img {
-                    width: 70%;
-                    height: auto;
-                    margin-bottom: 30px;
-                }
-
-                h1 {
-                    @extend %minor_small;
-                    font-size: 0.9rem;
-                }
-            }
-        }
-    }
+    
 }
 
 // Iphone X
@@ -200,9 +146,6 @@
         width: 100vw;
         left: 0;
         height: 100vh;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        position: relative;
         justify-content: flex-start;
         align-items: flex-start;
      
@@ -229,33 +172,7 @@
             transform: translateX(-100%);
         }
 
-        .posts_container {
-            position: absolute;
-            top: 15px;
-            left: 0;
-            width: 100%;
-            height: auto;
-            transform: translateX(100%);
-            transition: 0.3s all ease-in-out;
-            overflow: visible;
 
-            .inner {
-                height: auto;
-                
-                .courses_post_form_container {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-end;
-                    position: relative;
-                }
-            }
-
-        
-        }
-
-        .posts_slide {
-            transform: translateX(0);
-        }
 
 
     }

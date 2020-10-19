@@ -6,8 +6,9 @@
     align-items: flex-start;
     flex-direction: column;
     height: auto;
-    width: 100%;
-    transform: translateY(-30px);
+    width: 95%;
+    margin-bottom: 20px;
+   
 
     .title {
         @extend %space_between_flex;

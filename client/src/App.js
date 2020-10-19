@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 
 import "./App.css";
@@ -15,6 +16,7 @@ import Recommendations from "./components/layout/Recommendations";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Courses from "./components/layout/Courses";
+import PostsRoute from './components/layout/Posts/PostsRoute.jsx'
 import Alert from './components/layout/Alert';
 import Teachers from './components/layout/Teachers';
 import Profile from './components/layout/Profile.jsx';
@@ -33,6 +35,9 @@ const App = () => {
     store.dispatch(loadUser())
   }, [])
 
+  // MediaQueries
+  const isMobile = useMediaQuery({ query: "(max-width: 430px)" });
+
 
 
   return (
@@ -44,10 +49,12 @@ const App = () => {
           <Navbar />
           <NavbarM />
           <Recommendations />
+          <PrivateRoute exact path='/courses/:id' component={PostsRoute} />
           <Switch>
-            <PrivateRoute exact path="/courses" component={Courses} />
+            <PrivateRoute exact={isMobile ? true : false} path="/courses" component={Courses} />
             <PrivateRoute exact path='/teachers' component={Teachers} />
             <PrivateRoute exact path='/profile' component={Profile} />
+            
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
           </Switch>
