@@ -23,8 +23,8 @@ const Recommendations = ({auth: { isAuthenticated, loading }}) => {
       logo: <AiOutlineBarChart />,
       name: "Increaser",
       for: "Productivity App",
-      bg: "#defcfc",
-      iconColor: "#a6e3e9",
+      bg: "#375e97",
+      iconColor: "white",
       link: "https://increaser.org/"
     },
     {
@@ -32,8 +32,8 @@ const Recommendations = ({auth: { isAuthenticated, loading }}) => {
       logo: <AiOutlineStar />,
       name: "Anki",
       for: "Memorizing Study Tool",
-      bg: "#ffffc5",
-      iconColor: "#f0dd92",
+      bg: "#fb6542",
+      iconColor: "white",
       link: "https://apps.ankiweb.net/"
     },
     {
@@ -41,8 +41,8 @@ const Recommendations = ({auth: { isAuthenticated, loading }}) => {
       logo: <AiOutlineBook />,
       name: "Grow Daily Journal",
       for: "Habit Tracking Assistant",
-      bg: "#e8ffff",
-      iconColor: "#41aea9",
+      bg: "#ffbb00",
+      iconColor: "white",
       link: "https://www.baronfig.com/tools/confidant/guided"
     },
   ];

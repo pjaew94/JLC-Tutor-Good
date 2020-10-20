@@ -37,7 +37,7 @@
         padding-top: 2px;
         padding-bottom: 2px;
         padding-right: 10px;
-        min-height: 70px;
+      
         height: auto;
         width: 100%;
         padding: 2px 0;
@@ -84,15 +84,15 @@
         .satMath,
         .algebraMath,
         .prealgebraMath {
-            border-left: 3px solid #83aea7;
+            border-left: 3px solid #375e97;
         }
     
         .bookClub {
-            border-left: 3px solid #ffb3b3;
+            border-left: 3px solid #fb6542;
         }
     
         .english {
-            border-left: 3px solid #DF5E44;
+            border-left: 3px solid #3f681c;
         }
         
     
@@ -179,8 +179,8 @@
 @media screen and (max-width: 430px) {
     .post_container {
         width: 100%;
-        min-height: 70px;
-
+        margin-bottom: 20px;
+        align-items: center;
         
         .delete_edit {
             left: -40px;
@@ -221,11 +221,12 @@
         }
 
         .post {
-            height: 100%;
+            width: 95%;
 
             .left,
             .right {
-                
+                min-height: 70px;
+                height: 100%;
             }
 
             

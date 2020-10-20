@@ -15,7 +15,11 @@ import {
 
 import "../styles/NavbarM.scss";
 
-const NavbarM = ({ logout, auth: { isAuthenticated, loading, user }, navbarM: { show } }) => {
+const NavbarM = ({
+  logout,
+  auth: { isAuthenticated, loading, user },
+  navbarM: { show },
+}) => {
   const [navState, setNavState] = useState("courses");
   const [showNav, setShowNav] = useState(false);
 
@@ -26,28 +30,32 @@ const NavbarM = ({ logout, auth: { isAuthenticated, loading, user }, navbarM: { 
 
   return (
     <Fragment>
-      { show && <div className="icon_container">
-        <div
-          className={`hamburger ${showNav && "hide_hamburger"}`}
-          onClick={() => {
-            setShowNav(true);
-          }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+      {show && (
+        <div className="icon_container">
+
+            <div
+              className={`hamburger ${showNav && "hide_hamburger"}`}
+              onClick={() => {
+                setShowNav(true);
+              }}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div
+              className={`arrow_icon_container ${showNav && "show_arrow"}`}
+              onClick={() => {
+                setShowNav(false);
+              }}
+            >
+              <IconContext.Provider value={{ className: "icon" }}>
+                <CgArrowRight />
+              </IconContext.Provider>
+            </div>
+
         </div>
-        <div
-          className={`arrow_icon_container ${showNav && "show_arrow"}`}
-          onClick={() => {
-            setShowNav(false);
-          }}
-        >
-          <IconContext.Provider value={{ className: "icon" }}>
-            <CgArrowRight />
-          </IconContext.Provider>
-        </div>
-      </div>}
+      )}
       {!loading & isAuthenticated ? (
         <nav
           className={`navbarM-container ${showNav && "show_nav"}`}
@@ -113,16 +121,12 @@ const NavbarM = ({ logout, auth: { isAuthenticated, loading, user }, navbarM: { 
             ) : null}
           </ul>
 
-            
-              <a className="logout_link" href="/" onClick={logout}>
-              <IconContext.Provider value={{ className: "icon" }}>
-                  <AiOutlineLogout />
-                </IconContext.Provider>
-                Log Out
-      
-              </a>
-    
-
+          <a className="logout_link" href="/" onClick={logout}>
+            <IconContext.Provider value={{ className: "icon" }}>
+              <AiOutlineLogout />
+            </IconContext.Provider>
+            Log Out
+          </a>
         </nav>
       ) : null}
     </Fragment>
@@ -137,7 +141,7 @@ NavbarM.propTypes = {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  navbarM: state.navbarM
+  navbarM: state.navbarM,
 });
 
 export default connect(mapStateToProps, { logout })(NavbarM);

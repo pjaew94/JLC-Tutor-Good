@@ -150,7 +150,7 @@
                     font-weight: 500;
                     font-size: 1rem;
                     color: #ffd5cd;
-                    height: 60px;
+                    height: 100%;
                     width: 120px;
                     border: 2px solid #ffd5cd;
                     background: white;
@@ -211,6 +211,69 @@
         }
     }
 }
+
+
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        
+        .login {
+
+            .login_content {
+                height: 70%;
+                width: 35%;
+
+                .logo {
+                    height: 120px;
+                    width: 60%;
+
+                    .hexagon {
+                        font-size: 2.8rem;
+                    }
+
+                    span {
+                        font-size: 3rem;
+                    }
+                }
+
+                .login_form {
+                    width: 60%;
+                    .input_wrapper {
+                        
+                        .form_group {
+                            height: 70px;
+
+                            input {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+
+                    .button_container {
+                        margin-top: 10px;
+                        height: 100px;
+
+                        .button {
+                            font-size: 1.5rem;
+                            width: 170px;
+                        }
+                    }
+
+                    .route_to_register {
+                        font-size: 1.2rem;
+                        margin-top: 30px;
+
+                        .small_link {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+}
+
+
 
 // Smart Phone Portrait
 @media screen and (max-width: 430px) {

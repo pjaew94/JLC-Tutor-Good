@@ -27,7 +27,8 @@
                 display: flex;
                 flex-direction: column;
                 padding: 30px;
-                height: 270px;
+                min-height: 270px;
+                height: auto;
                 width: 100%;
                 background: white;
                 margin-bottom: 30px;
@@ -49,24 +50,24 @@
                     }
 
                     .bookClub {
-                        background: #fddfdf;
+                        background: #fb6542;
 
                         .icon {
-                            color: #ffb3b3;
+                            color: white;
                         }
                     }
 
                     .english {
-                        background:#F6CEC6;
+                        background: #3f681c;
                         .icon {
-                            color: #DF5E44;
+                            color: white;
                         }
                     }
 
                     .math {
-                        background: #dfeae9;
+                        background: #375e97;
                         .icon {
-                            color: #83aea7;
+                            color: white;
                         }
                     }
 
@@ -136,8 +137,15 @@
             }
         }
     }
+}
 
-    
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1200px) 
+    and (max-device-width: 1600px) 
+    and (-webkit-min-device-pixel-ratio: 2) 
+    and (min-resolution: 192dpi) {
+        
 }
 
 // Iphone X
@@ -148,13 +156,11 @@
         height: 100vh;
         justify-content: flex-start;
         align-items: flex-start;
-     
+
         .courses {
-           
             width: 100%;
             height: auto;
             transition: 0.3s all ease-in-out;
-           
 
             .inner {
                 height: auto;
@@ -164,17 +170,12 @@
                 .course_card {
                     box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
                 }
-
             }
         }
 
         .courses_slide {
             transform: translateX(-100%);
         }
-
-
-
-
     }
 
     .posts_back_button_mobile {
@@ -195,11 +196,10 @@
         opacity: 0;
 
         h3 {
-            font-family: 'Arvo', serif;
+            font-family: "Arvo", serif;
             font-weight: 400;
             margin-left: 5px;
         }
-
     }
 
     .show_mobile_back_button {

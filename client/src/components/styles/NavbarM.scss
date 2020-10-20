@@ -7,17 +7,23 @@
     height: 8vh;
     width: 100vw;
     position: relative;
+    
     overflow: hidden;
+    background: white;
     z-index: 5;
+    
 
     .hamburger {
         @extend %space_between_flex;
         flex-direction: column;
-        height: 25px;
-        width: 36px;
+        height: 42px;
+        width: 46px;
         position: fixed;
-        right: 30px;
+        right: 26px;
         transition: 0.3s all ease-in-out;
+        background: white;
+        padding: 10px 7px;
+        border-radius: 10px;
         
 
 
@@ -34,7 +40,7 @@
     }
 
     .arrow_icon_container {
-        position: absolute;
+        position: fixed;
         transition: 0.3s all ease-in-out;
         right: 30px;
         transform: translateX(30px);
@@ -49,6 +55,8 @@
         opacity: 1;
     }
 }
+
+
 
 .navbarM-container {
     height: 100vh;

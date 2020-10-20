@@ -156,6 +156,26 @@
     }
 }
 
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        .navbar {
+            padding: 5% 8%;
+
+            .navbar_logo{
+
+                .hexagon {
+
+                }
+
+                span {
+                    font-size: 2.5rem;
+                }
+            }
+    }
+}
+
 
 @media screen and (max-width: 430px) {
     .navbar {

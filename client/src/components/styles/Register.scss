@@ -24,12 +24,11 @@
                 @extend %center_flex;
                 width: 70%;
                 padding-bottom: 10px;
-                border-bottom: 1px solid black;
+                border-bottom: 2px solid black;
 
                 .header {
-                    font-family: "Raleway", sans-serif;
-                    font-weight: 300;
-                    font-size: 2rem;
+                   @extend %main_large;
+                   font-weight: 400;
                     // margin-bottom: 50px;
                 }
             }
@@ -59,9 +58,7 @@
                         input {
                             height: 100%;
                             width: 100%;
-                            font-family: "Open Sans", sans-serif;
-                            font-weight: 300;
-                            font-size: 0.8rem;
+                            @extend %minor_small;
                             text-align: center;
                             // border: 1px solid rgb(170, 169, 169);
                             border: none;
@@ -87,9 +84,7 @@
                         margin-bottom: 10px;
 
                         select {
-                            font-family: "Open Sans", sans-serif;
-                            font-weight: 300;
-                            font-size: 0.7rem;
+                            @extend %minor_small;
                             width: 47%;
                             border: 1px solid rgb(170, 169, 169);
                             border-radius: 5px;
@@ -97,9 +92,7 @@
                             outline: none;
 
                             option {
-                                font-family: "Open Sans", sans-serif;
-                                font-weight: 300;
-                                font-size: 0.7rem;
+                                @extend %minor_small;
                             }
                         }
 
@@ -113,8 +106,7 @@
                 }
 
                 .button {
-                    font-family: "Raleway", sans-serif;
-                    font-weight: 300;
+                    @extend %minor_small;
                     font-size: 1rem;
                     height: 60px;
                     width: 120px;
@@ -146,14 +138,12 @@
                 }
 
                 .redirect_login {
-                    font-family: "Open Sans", sans-serif;
-                    font-weight: 300;
+                    @extend %minor_small;
                     font-size: 0.7rem;
                     transform: translateY(10px);
 
                     .small_link {
-                        font-family: "Open Sans", sans-serif;
-                        font-weight: 300;
+                        @extend %minor_small;
                         font-size: 0.7rem;
                         transition: 0.2s all ease-in;
 
@@ -180,7 +170,81 @@
         }
     }
 }
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        .admin_register {
 
+            .container {
+                height: 80vh;
+                width: 80vw;
+
+                .form_container {
+                    height: 50%;
+                    
+                    .header_container {
+                        border-bottom: 3px solid rgb(66, 66, 66);
+
+                        .header {
+                            font-size: 3rem;
+                            color: rgb(66, 66, 66);
+                        }
+                    }
+
+                    .admin_form {
+                        height: 70%;
+
+                        .inner {
+                            
+                            .form_upper,
+                            .form_lower {
+                                margin-bottom: 30px;
+                            }
+
+                            .form_group {
+                                height: 60px;
+
+                                input {
+                                    font-size: 1.4rem;
+                                }
+                            }
+
+                            .select_container {
+                                
+                                select {
+                                    height: 60px;
+                                    font-size: 1.4rem;
+                                    
+                                    option {
+                                        font-size: 1.4rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .button {
+                            height: 120px;
+                            width: 220px;
+                            font-size: 1.6rem;
+                            margin-bottom: 20px;
+                        }
+
+                        .redirect_login {
+                            font-size: 1.2rem;
+
+                            .small_link {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    // Iphone X
 @media screen and (max-width: 430px) {
     .admin_register {
         height: 100vh;
