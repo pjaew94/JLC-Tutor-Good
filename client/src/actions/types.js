@@ -18,3 +18,5 @@ export const DELETE_POST = 'DELETE_POST'
 export const ADD_POST = 'ADD_POST'
 export const ADD_COMMENT = 'ADD_COMMENT'
 export const REMOVE_COMMENT = 'REMOVE_COMMENT'
+export const SHOW_NAVBAR_M = 'SHOW_NAVBAR_M';
+export const HIDE_NAVBAR_M = 'HIDE_NAVBAR_M';

@@ -5,6 +5,7 @@ import { setAlert } from "../../actions/alert";
 import { loadUser, register } from "../../actions/auth";
 import PropTypes from "prop-types";
 import Spinner from "../layout/Spinner";
+import { showNavbarM } from '../../actions/navbarM.js';
 
 import "../styles/Register.scss";
 
@@ -15,6 +16,7 @@ const Register = ({
   setAlert,
   register,
   auth: { user, loading, isAuthenticated },
+  showNavbarM
 }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -89,6 +91,8 @@ const Register = ({
           studentSubjects,
           instructorSubjects,
         });
+
+        showNavbarM();
       }
     }
   };
@@ -239,6 +243,7 @@ Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   loadUser: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
+  showNavbarM: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
 };
 
@@ -246,6 +251,6 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { setAlert, loadUser, register })(
+export default connect(mapStateToProps, { setAlert, loadUser, register, showNavbarM })(
   Register
 );

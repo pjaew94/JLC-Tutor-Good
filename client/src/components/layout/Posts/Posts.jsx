@@ -110,13 +110,13 @@ const Posts = ({
   return (
     <div className="post_container">
       <div
-        className={`post ${showEdit && "minify"} ${subject}`}
+        className='post'
         onMouseEnter={() => checkAndShowEdit()}
         onMouseLeave={() => setShowEdit(false)}
       >
         {showEdit && deleteEdit}
         {isMobile && deleteEdit}
-        <div className="left" onClick={() => checkAndShowEditM()}>
+        <div className={`left ${showEdit && "minify"} ${subject}`} onClick={() => checkAndShowEditM()}>
           <h3 className="homework">
             <span>Homework:</span> {homework}
           </h3>

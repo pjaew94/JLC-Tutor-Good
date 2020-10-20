@@ -4,6 +4,7 @@ import alert from './alert'
 import auth from './auth'
 import subjects from './subjects'
 import posts from './posts'
+import navbarM from './navbarM'
 
 
 export default combineReducers({
@@ -11,4 +12,5 @@ export default combineReducers({
     auth,
     subjects,
     posts,
+    navbarM
 });
