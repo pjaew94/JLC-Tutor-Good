@@ -196,6 +196,66 @@
         }
     }
 }
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .courses_container {
+        left: 0;
+        top:   8vh;
+        width: 50vw;
+        
+        height: auto;
+
+        .courses {
+            padding: 0;
+            height: auto;
+
+            .inner {
+                padding: 15px;
+                height: auto;
+
+                .course_card {
+
+                }
+            }
+        }
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .courses_container {
+        left: 0;
+        top:   8vh;
+        width: 35vw;
+        min-height: 100vh;
+        height: auto;
+
+        .courses {
+            padding: 0;
+            height: auto;
+
+            .inner {
+                padding: 20px;
+                height: auto;
+
+                .course_card {
+
+                }
+            }
+        }
+    }
+}
+
+
 // Iphone X
 @media screen and (max-width: 430px) {
     .courses_container {

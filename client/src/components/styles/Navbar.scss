@@ -12,7 +12,6 @@
     top: 0;
     left: 0;
 
-
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
@@ -24,7 +23,7 @@
 
         .hexagon {
             font-size: 2rem;
-            color: #CC5737;
+            color: #cc5737;
         }
 
         span {
@@ -84,7 +83,7 @@
         .show_logout,
         .hide_logout {
             @extend %center_flex;
-           
+
             height: 30px;
             width: 120px;
             transition: 0.3s all ease-in;
@@ -157,82 +156,91 @@
 }
 
 // Retina Screens Laptop
-@media screen 
-    and (min-device-width: 1930px) 
-    and (max-device-width: 2880px)  {
-        .navbar {
-            padding: 5% 8%;
+@media screen and (min-device-width: 1930px) and (max-device-width: 2880px) {
+    .navbar {
+        padding: 5% 8%;
+        align-items: center;
+        .navbar_logo {
+            width: 20vw;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            .navbar_logo{
-                width: 20vw;
-                display: flex;
-                justify-content: center;
-                align-items: center;
 
-                .hexagon {
-                    font-size: 4rem;
-                }
-
-                span {
-                    font-size: 3rem;
-                }
+            .hexagon {
+                font-size: 4rem;
             }
 
-            ul {
-                transform: translateY(-300px);
+            span {
+                font-size: 3rem;
+            }
+        }
 
-                li {
-                    width: 300px;
-                    margin-bottom: 60px;
+        ul {
+            transform: translateY(-300px);
 
-                    .link {
-                        font-size: 2.1rem;
+            li {
+                width: 300px;
+                margin-bottom: 60px;
 
-                        .icon {
-                            font-size: 2.3rem;
-                        }
+                .link {
+                    font-size: 2.1rem;
+
+                    .icon {
+                        font-size: 2.3rem;
                     }
                 }
             }
+        }
 
-            .user {
-                width: 10vw;
-                .show_logout,
-                .hide_logout {
-                    height: 50px;
-                    width: 200px;
-        
-                    a {
+        .user {
+            width: 10vw;
+            .show_logout,
+            .hide_logout {
+                height: 50px;
+                width: 200px;
+
+                a {
+                    font-size: 2rem;
+
+                    .icon {
                         font-size: 2rem;
-
-                        .icon {
-                            font-size: 2rem;
-                        }
-                    }
-                }
-
-                .user_block {
-
-
-                    img {
-                        height: 80px;
-                        width: 80px;
-                    }
-
-                    .user_info {
-                        font-size: 2rem;
-
-                        span {
-                            font-size: 1.5rem;
-                        }
                     }
                 }
             }
+
+            .user_block {
+                img {
+                    height: 80px;
+                    width: 80px;
+                }
+
+                .user_info {
+                    font-size: 2rem;
+
+                    span {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
     }
-
-    
 }
 
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .navbar {
+        display: none;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .navbar {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 430px) {
     .navbar {

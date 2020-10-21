@@ -36,7 +36,8 @@ const App = () => {
   }, [])
 
   // MediaQueries
-  const isMobile = useMediaQuery({ query: "(max-width: 430px)" });
+  const isMobile = useMediaQuery({ query: "(max-device-width: 430px)" });
+  const isTablet = useMediaQuery({ query: "(max-device-width: 1024px)"  })
 
 
 

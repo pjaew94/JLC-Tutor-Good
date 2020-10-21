@@ -216,7 +216,7 @@
 // Retina Screens Laptop
 @media screen 
     and (min-device-width: 1930px) 
-    and (max-device-width: 2880px)  {
+    and (max-device-width: 2880px) and (-webkit-min-device-pixel-ratio: 1)  {
         
         .login {
 
@@ -273,7 +273,48 @@
         }
 }
 
+// iPad 1,2 mini, and air 
+// Portrait and Landscape
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .login {
+        .background {
+            display: none;
+        }
+        .login_content {
+            width: 60%;
 
+            .logo {
+                width: 70%;
+            }
+
+            .login_form {
+                width: 70%;
+
+                .button_container {
+
+                }
+            }
+        }
+    }
+}
+
+// Landscape
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .login {
+
+        .background {
+            display: none;
+        }
+        .login_content {
+            height: 80%;
+            width: 40%;
+        }
+    }
+}
 
 // Smart Phone Portrait
 @media screen and (max-width: 430px) {

@@ -173,7 +173,7 @@
 // Retina Screens Laptop
 @media screen 
     and (min-device-width: 1930px) 
-    and (max-device-width: 2880px)  {
+    and (max-device-width: 2880px)  and (-webkit-min-device-pixel-ratio: 1)  {
         .admin_register {
 
             .container {
@@ -242,6 +242,38 @@
             }
         }
     }
+
+// iPad 1,2 mini, and air 
+
+// Portrait and Landscape
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .admin_register {
+        .container {
+
+            .form_container {
+                width: 100%;
+            }
+
+            .svg_container {
+                display: none;
+            }
+        }
+    }
+}
+
+// Landscape
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .admin_register {
+        .container {
+            height: 80vh;
+            width: 50vw;
+        }
+    }
+}
 
 
     // Iphone X

@@ -268,3 +268,100 @@
             }
         }
     }
+
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .recommendations {
+        left: 0;
+        top: 50vh;
+        flex-direction: row;
+        width: 100vw;
+
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .recommendations {
+        right: 0;
+        top: 5vh;
+        left: 65vw;
+        flex-direction: column;
+        width: 35vw;
+
+        .apps {
+            padding: 0;
+
+            .title {
+                margin-bottom: 20px;
+            }
+
+            .apps_container {
+
+                .app_card {
+                    margin-bottom: 10px;
+                    padding: 5px;
+
+                    .logo {
+                        height: 40px;
+                        width: 40px;
+
+                        .icon {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    .content {
+                        h2 {
+                            font-size: 0.7rem;
+                        }
+
+                        h3 {
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .books {
+            padding: 20px;
+
+            .title {
+                margin-bottom: 10px;
+            }
+
+            .books_container {
+
+                .book_card {
+                    padding: 8px 15px;
+
+                    .content {
+                        margin-right: 20px;
+                        h2 {
+                            font-size: 0.8rem;
+
+                            span {
+                                font-size: 0.6rem;
+                            }
+                        }
+
+                        h3 {
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

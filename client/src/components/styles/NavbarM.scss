@@ -150,8 +150,55 @@
 
 }
 
+/* ----------- iPad 1, 2, Mini and Air ----------- */
 
-@media screen and (min-width: 430px) {
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .navbarM-container {
+        
+        .navbarM {
+            width: 30%;
+        }
+    }
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        .navbarM-container {
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            background-color: none;
+        }
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .navbarM-container {
+
+        .navbarM {
+            width: 25%;
+        }
+    }
+
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        .navbarM-container {
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+            background-color: none;
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 1025px) {
     .icon_container {
         display: none;
     }
