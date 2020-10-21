@@ -49,3 +49,19 @@
             }
         }
     }
+
+// Iphone X
+@media screen and (max-width: 430px) {
+    .teachers_container {
+        left: 0;
+        width: 100vw;
+
+        .inner_container {
+            box-shadow: none;
+            width: 100vw;
+            padding: 0 5vw;
+
+            
+        }
+    }
+}
