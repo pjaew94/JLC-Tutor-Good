@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from '../../actions/auth';
-import { showNavbarM } from '../../actions/navbarM.js';
+
 
 import "../styles/Login.scss";
 import sittingSvg from "../../svgs/Group 2.svg";
@@ -16,7 +16,7 @@ import blob4Svg from "../../svgs/blobs/Blob4.svg";
 import { IconContext } from "react-icons";
 import { CgShapeHexagon } from "react-icons/cg";
 
-const Login = ({ login, isAuthenticated, showNavbarM }) => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -30,7 +30,7 @@ const Login = ({ login, isAuthenticated, showNavbarM }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     login(email, password);
-    showNavbarM();
+
   };
 
   if(isAuthenticated) {
@@ -95,7 +95,6 @@ const Login = ({ login, isAuthenticated, showNavbarM }) => {
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
-  showNavbarM: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   
 }
@@ -104,4 +103,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 })
 
-export default connect(mapStateToProps, { login, showNavbarM })(Login);
+export default connect(mapStateToProps, { login })(Login);

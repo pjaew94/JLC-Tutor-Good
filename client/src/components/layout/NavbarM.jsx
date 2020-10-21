@@ -18,7 +18,7 @@ import "../styles/NavbarM.scss";
 const NavbarM = ({
   logout,
   auth: { isAuthenticated, loading, user },
-  navbarM: { show },
+
 }) => {
   const [navState, setNavState] = useState("courses");
   const [showNav, setShowNav] = useState(false);
@@ -30,7 +30,7 @@ const NavbarM = ({
 
   return (
     <Fragment>
-      {show && (
+      {isAuthenticated && (
         <div className="icon_container">
 
             <div
@@ -136,12 +136,11 @@ const NavbarM = ({
 NavbarM.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  navbarM: PropTypes.object.isRequired,
+
 };
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  navbarM: state.navbarM,
 });
 
 export default connect(mapStateToProps, { logout })(NavbarM);
