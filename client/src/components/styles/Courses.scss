@@ -19,7 +19,7 @@
             flex-direction: column;
             height: 90vh;
             width: 100%;
-            padding: 40px 30px;
+            padding: 25px 30px;
             border-radius: 20px;
             background: #f9f9f8;
 
@@ -27,7 +27,7 @@
                 display: flex;
                 flex-direction: column;
                 padding: 30px;
-                min-height: 270px;
+                min-height: 260px;
                 height: auto;
                 width: 100%;
                 background: white;
@@ -140,14 +140,62 @@
 }
 
 // Retina Screens Laptop
-@media screen 
-    and (min-device-width: 1200px) 
-    and (max-device-width: 1600px) 
-    and (-webkit-min-device-pixel-ratio: 2) 
-    and (min-resolution: 192dpi) {
-        
-}
+@media screen and (min-device-width: 1930px) and (max-device-width: 2880px) {
+    .courses_container {
+        width: 30vw;
 
+        .courses {
+            .inner {
+                .course_card {
+                    min-height: 30%;
+                    margin-bottom: 50px;
+
+                    .icon_button_container {
+
+                        .icon_container {
+                            height: 90px;
+                            width: 90px;
+                            margin-bottom: 20px;
+
+                            .icon {
+                                font-size: 2.5rem;
+                            }
+                        }
+
+                        .course_button {
+
+                            .icon {
+                                font-size: 3.2rem;
+                            }
+
+                            h3 {
+                                font-size: 1.8rem;
+                                padding: 10px 5px;
+                                left: -50px;
+                            }
+                        }
+                    }
+
+                    .instructor {
+                        font-size: 1.7rem;
+                    }
+
+                    .title {
+                        font-size: 2.3rem;
+                    }
+
+                    .time {
+                        font-size: 1.7rem;
+                        margin-bottom: 10px;
+                    }
+                    .info {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+}
 // Iphone X
 @media screen and (max-width: 430px) {
     .courses_container {

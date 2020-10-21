@@ -3,7 +3,7 @@
 .recommendations {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: column;
     position: absolute;
     right: 0;
@@ -171,9 +171,100 @@
     }
 
 }
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        .recommendations {
+            width: 25vw;
+        }
+    }
 
 @media screen and (max-width: 430px) {
     .recommendations {
         display: none;
     }
 }
+
+
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        .recommendations {
+
+            .apps {
+
+                .title {
+                    font-size: 3rem;
+
+                    span {
+                        font-size: 3rem;
+                    }
+                }
+
+                .apps_container {
+
+                    .app_card {
+                        width: 90%;
+                        margin-bottom: 25px;
+
+                        .logo {
+                            height: 90px;
+                            width: 90px;
+
+                            .icon {
+                                font-size: 2rem;
+                            }
+                        }
+
+                        .content {
+
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+                            h3 {
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .books {
+
+                .title {
+                    font-size: 3rem;
+                    span {
+                        font-size: 3rem;
+                    }
+                }
+
+                .books_container {
+
+                    .book_card {
+                        margin-bottom: 30px;
+                        padding: 15px 30px;
+
+
+                        .content {
+                            h2 {
+                                font-size: 2rem;
+                                span {
+                                    font-size: 1.5rem;
+                                }
+                            }
+                            h3 {
+                                font-size: 1.5rem;
+                            }
+                        }
+
+                        img {
+                            height: 230px;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }

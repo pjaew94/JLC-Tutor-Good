@@ -147,7 +147,7 @@ const Posts = ({
                 className="comment_button"
                 onClick={() => setShowComments(!showComments)}
               >
-                <IconContext.Provider value={{ className: "icon" }}>
+                <IconContext.Provider value={{ className: "icon comment_icon" }}>
                   <BiComment />
                 </IconContext.Provider>
               </button>

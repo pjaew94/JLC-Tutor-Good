@@ -56,3 +56,29 @@
     }
     
 }
+
+
+
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        .comment_form {
+            padding-left: 20px;
+            textarea {
+                min-height: 120px;
+                border: 2px solid rgb(85, 85, 85);
+                font-size: 1.5rem;
+                padding: 10px;
+            }
+
+            .button_container {
+                margin-top: 10px;
+                input {
+                    height: 60px;
+                    width: 170px;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }

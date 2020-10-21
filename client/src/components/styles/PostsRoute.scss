@@ -60,6 +60,28 @@
     }
 }
 
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        .posts_route_container {
+            width: 25vw;
+            left: 50vw;
+
+            .posts_route_inner_container {
+                
+            }
+
+            .no_post_container {
+
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+
+        }
+    }
+
 @media screen and (max-width: 430px) {
     .posts_route_container {
         width: 100vw;

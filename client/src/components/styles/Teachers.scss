@@ -33,3 +33,19 @@
     }
 
 }
+
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        .teachers_container {
+
+            .inner_container {
+
+                h1 {
+                    font-size: 2.8rem;
+                    padding: 15px 20px;
+                }
+            }
+        }
+    }

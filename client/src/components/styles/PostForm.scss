@@ -91,7 +91,8 @@
             }
 
             textarea {
-                height: 75px;
+                min-height: 75px;
+                height: auto;
                 width: 100%;
                 resize: none;
                 padding: 7px;
@@ -130,6 +131,81 @@
 
     }
 }
+
+// Retina Screens Laptop
+@media screen 
+    and (min-device-width: 1930px) 
+    and (max-device-width: 2880px)  {
+        .post_form_container {
+            margin-bottom: 40px;
+
+            .title {
+                width: 80%;
+                
+                h1 {
+                    font-size: 3rem;
+                }
+
+                .add_icon {
+                    height: 70px;
+                    width: 70px;
+                    padding: 10px;
+                    .icon {
+                        font-size: 3rem;
+                    }
+                }
+            }
+
+            .form {
+                min-height: 400px;
+                height: auto;
+                padding: 30px 30px;
+
+                h3, h4 {
+                    font-size: 1.5rem;
+                }
+
+                .due {
+                    margin-bottom: 20px;
+
+                    .due_text {
+                        h4 {
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                    input {
+                        width: 50%;
+                        font-size: 1.5rem;
+                        height: 2rem;
+                        border: 2px solid rgb(85, 85, 85);
+                    }
+
+                    
+                }
+                .homework {
+                    margin-bottom: 20px;
+                    textarea {
+                        min-height: 250px;
+                        font-size: 1.5rem;
+                        border: 2px solid rgb(85, 85, 85);
+                    }
+                }
+
+                .button_container {
+                    height: 110px;
+
+                    .button {
+                        height: 100%;
+                        width: 170px;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                    }
+                }
+
+            }
+        }
+    }
 
 // Iphone X
 @media screen and (max-width: 430px) {

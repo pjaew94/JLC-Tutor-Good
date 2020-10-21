@@ -162,18 +162,75 @@
     and (max-device-width: 2880px)  {
         .navbar {
             padding: 5% 8%;
-
+            align-items: center;
             .navbar_logo{
+                width: 20vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 .hexagon {
-
+                    font-size: 4rem;
                 }
 
                 span {
-                    font-size: 2.5rem;
+                    font-size: 3rem;
+                }
+            }
+
+            ul {
+                transform: translateY(-300px);
+
+                li {
+                    width: 300px;
+                    margin-bottom: 60px;
+
+                    .link {
+                        font-size: 2.1rem;
+
+                        .icon {
+                            font-size: 2.3rem;
+                        }
+                    }
+                }
+            }
+
+            .user {
+                width: 10vw;
+                .show_logout,
+                .hide_logout {
+                    height: 50px;
+                    width: 200px;
+        
+                    a {
+                        font-size: 2rem;
+
+                        .icon {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+
+                .user_block {
+
+
+                    img {
+                        height: 80px;
+                        width: 80px;
+                    }
+
+                    .user_info {
+                        font-size: 2rem;
+
+                        span {
+                            font-size: 1.5rem;
+                        }
+                    }
                 }
             }
     }
+
+    
 }
 
 
