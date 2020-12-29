@@ -54,7 +54,7 @@ const Posts = ({
         }
         return like;
       });
-  }, []);
+  }, [like, likes, userId]);
 
   // MediaQuery
   const isMobile = useMediaQuery({ query: "(max-width: 430px)" });

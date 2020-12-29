@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "../styles/Teachers.scss";
 import icecreamSvg from "../../svgs/icecreamSvg.svg";

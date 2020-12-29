@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { useMediaQuery } from "react-responsive";
-
-import { getSubjectPosts } from "../../../actions/posts";
 
 import coffeeGif from "../../../svgs/coffee.gif";
 

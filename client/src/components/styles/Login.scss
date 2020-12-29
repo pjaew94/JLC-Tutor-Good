@@ -9,76 +9,25 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 
-    .background {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-
-        .backdrop {
-            position: relative;
-            background: #f9f9f9;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-
-            img {
-                position: absolute;
-                width: auto;
-            }
-
-            .floating_svg {
-                top: 15%;
-                left: 3%;
-                height: 400px;
-            }
-            .sitting_svg {
-                bottom: 8%;
-                right: 5%;
-                height: 450px;
-            }
-
-            .blob1 {
-                height: 700px;
-                top: -30%;
-                left: 25%;
-            }
-
-            .blob2 {
-                height: 700px;
-                left: 35%;
-                bottom: -10%;
-            }
-
-            .blob3 {
-                height: 700px;
-                top: -15%;
-                right: 0%;
-            }
-
-            .blob4 {
-                height: 700px;
-                bottom: -25%;
-                left: -10%;
-            }
-        }
-    }
-
     .login_content {
-        @extend %center_flex;
+        display: flex;
         flex-direction: column;
-        height: 60%;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+        padding: 10vh 0;
         width: 30%;
         box-shadow: 0 1px 15px -10px rgb(148, 148, 148);
         border-radius: 10px;
+
         background: white;
         z-index: 2;
 
         .logo {
             @extend %center_flex;
-            height: 80px;
-            width: 50%;
+            padding: 20px 30px;
+
             background: #8675a9;
             border-radius: 10px;
 
@@ -99,16 +48,16 @@
             display: flex;
 
             flex-direction: column;
-            height: 50%;
-            width: 50%;
+            height: auto;
+            width: 55%;
 
             .input_wrapper {
-                margin-top: 50px;
+                padding: 20% 0;
                 height: 40%;
                 width: 100%;
 
                 .form_group {
-                    height: 50px;
+                    height: 3rem;
                     width: 100%;
                     margin-bottom: 20px;
 
@@ -141,19 +90,18 @@
 
             .button_container {
                 @extend %center_flex;
-                height: 60px;
+                height: auto;
                 width: 100%;
-                margin-top: 60px;
+                margin-bottom: 15px;
 
                 .button {
                     font-family: "Raleway", sans-serif;
                     font-weight: 500;
-                    font-size: 1rem;
+                    font-size: 1.1rem;
                     color: #ffd5cd;
-                    height: 100%;
-                    width: 120px;
                     border: 2px solid #ffd5cd;
                     background: white;
+                    padding: 25px 45px;
 
                     cursor: pointer;
                     transition: 0.4s all ease-in;
@@ -183,7 +131,6 @@
 
             .route_to_register {
                 @extend %center_flex;
-                margin-top: 15px;
                 font-family: "Open Sans", sans-serif;
                 font-weight: 300;
                 font-size: 0.7rem;
@@ -212,116 +159,67 @@
     }
 }
 
-
-// Retina Screens Laptop
-@media screen 
-    and (min-device-width: 1930px) 
-    and (max-device-width: 2880px) and (-webkit-min-device-pixel-ratio: 1)  {
-        
-        .login {
-
-            .login_content {
-                height: 70%;
-                width: 35%;
-
-                .logo {
-                    height: 120px;
-                    width: 60%;
-
-                    .hexagon {
-                        font-size: 2.8rem;
-                    }
-
-                    span {
-                        font-size: 3rem;
-                    }
-                }
-
-                .login_form {
-                    width: 60%;
-                    .input_wrapper {
-                        
-                        .form_group {
-                            height: 70px;
-
-                            input {
-                                font-size: 1.2rem;
-                            }
-                        }
-                    }
-
-                    .button_container {
-                        margin-top: 10px;
-                        height: 100px;
-
-                        .button {
-                            font-size: 1.5rem;
-                            width: 170px;
-                        }
-                    }
-
-                    .route_to_register {
-                        font-size: 1.2rem;
-                        margin-top: 30px;
-
-                        .small_link {
-                            font-size: 1.2rem;
-                        }
-                    }
-                }
-            }
-        }
-}
-
-// iPad 1,2 mini, and air 
-// Portrait and Landscape
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+// 4k
+@media screen and (min-device-width: 2400px) and (max-device-width: 3200px) {
     .login {
-        .background {
-            display: none;
-        }
         .login_content {
-            width: 60%;
+            width: 35%;
 
             .logo {
-                width: 70%;
+                padding: 3% 5%;
+
+                .hexagon {
+                    font-size: 4rem;
+                }
+
+                span {
+                    font-size: 4.5rem;
+                }
             }
 
             .login_form {
-                width: 70%;
+                width: 60%;
+                .input_wrapper {
+                    .form_group {
+                        height: 6rem;
+                        margin-bottom: 7%;
+
+                        input {
+                            font-size: 2rem;
+                        }
+                    }
+                }
 
                 .button_container {
+                    height: auto;
+                    width: 100%;
 
+                    .button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 2.5rem;
+                        padding: 7% 20%;
+                    }
+                }
+
+                .route_to_register {
+                    font-size: 1.2rem;
+                    margin-top: 30px;
+
+                    .small_link {
+                        font-size: 1.2rem;
+                    }
                 }
             }
         }
     }
 }
 
-// Landscape
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-    .login {
 
-        .background {
-            display: none;
-        }
-        .login_content {
-            height: 80%;
-            width: 40%;
-        }
-    }
-}
-
-// Smart Phone Portrait
-@media screen and (max-width: 430px) {
+// Phone
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
     .login {
-        position: absolute;
-        top: 0;
-        left: 0;
         background: white;
         height: 100vh;
         width: 100vw;
@@ -331,15 +229,9 @@
         user-select: none; /* Standard */
         z-index: 10;
 
-        .background {
-            display: none;
-        }
-
         .login_content {
-            height: 500px;
             width: 100%;
             box-shadow: none;
-            justify-content: space-between;
 
             .logo {
                 width: 80%;
@@ -347,7 +239,7 @@
 
             .login_form {
                 width: 80%;
-                height: 400px;
+                height: auto;
 
                 .button_container {
                     margin-top: 0px;
@@ -360,6 +252,53 @@
             }
 
             .button_container {
+            }
+        }
+    }
+}
+
+
+// Tablet
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (min-height: 1024px) {
+    .login {
+        .login_content {
+            width: 70%;
+
+            .logo {
+                padding: 30px 0;
+            }
+
+            .login_form {
+                width: 80%;
+
+                .input_wrapper {
+                    padding: 20% 0 10% 0;
+                    height: auto;
+                    .form_group {
+                        height: 4rem;
+                        margin-bottom: 40px;
+
+                        input {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+
+                .button_container {
+                    .button {
+                        font-size: 1.2rem;
+                        padding: 30px 50px;
+                    }
+
+                }
+
+                .route_to_register {
+                    font-size: 0.9rem;
+
+                    .small_link {
+                        font-size: 0.9rem;
+                    }
+                }
             }
         }
     }
