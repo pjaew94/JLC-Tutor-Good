@@ -136,19 +136,362 @@
     }
 }
 
-// 4k
-@media screen and (min-device-width: 1930px) and (max-device-width: 2880px) {
+// Phone portrait
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: portrait) {
     .courses_container {
-        width: 30vw;
+        width: 100vw;
+        left: 0;
+        height: auto;
+
+        .courses {
+            height: auto;
+            padding: 2% 0;
+
+            .inner {
+                background: none;
+                height: auto;
+                padding: 0 3%;
+
+                .course_card {
+                    box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+                    margin-bottom: 10%;
+                    min-height: 300px;
+                    padding: 10% 10%;
+                }
+            }
+        }
+    }
+}
+
+// Phone landscape
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: landscape) {
+    .courses_container {
+        width: 100vw;
+        left: 0;
+        height: auto;
+
+        .courses {
+            height: auto;
+
+            .inner {
+                height: auto;
+                background: none;
+
+                .course_card {
+                    box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
+
+// Low end Tablet Portrait
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1366px) 
+and (min-height: 1024px) 
+and (orientation: portrait) {
+    .courses_container {
+        .courses {
+            .inner {
+                padding: 3% 20%;
+            }
+        }
+    }
+}
+
+// Low end Tablet landscape
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .courses_container {
+          width: 45%;
+          height: auto;
+          left: 0;
+          border-right: 1px solid rgb(182, 182, 182);
+          overflow-y: scroll;
+
+          .courses {
+              height: auto;
+
+              .inner {
+                  height: auto;
+                  background: none;
+                
+                  .course_card {
+                    box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+                    margin-bottom: 40px;
+                  }
+              }
+          }
+      }
+  }
+
+  // Mid Tablet Portrait
+  @media only screen 
+  and (min-device-width: 823px) 
+  and (max-device-width: 823px) 
+  and (min-device-height: 1112px) 
+  and (max-device-height: 1112px) 
+  and (orientation: portrait) {
+    .courses_container {
+        left: 0;
+        height: auto;
+        width: 100vw;
+
+        .courses {
+            height: auto;
+
+            .inner {
+                background: none;
+                height: auto;
+
+                .course_card {
+                    min-height: 350px;
+                    box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+                    margin-bottom: 40px;
+
+                    .icon_button_container {
+                        .icon_container {
+                            height: 60px;
+                            width: 60px;
+
+                            .icon {
+                                font-size: 1.7rem;
+                            }
+                        }
+                    }
+
+                    .instructor {
+                        font-size: 1rem;
+                    }
+
+                    .title {
+                        font-size: 1.5rem;
+                    }
+
+                    .time {
+                        font-size: 1rem;
+                    }
+
+                    .info {
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mid Tablet Landscape
+@media only screen 
+and (min-device-height: 823px) 
+and (max-device-height: 823px) 
+and (min-device-width: 1112px) 
+and (max-device-width: 1112px) 
+and (orientation: landscape) {
+        .courses_container {
+            width: 45%;
+            height: auto;
+            left: 0;
+            border-right: 1px solid rgb(182, 182, 182);
+            overflow-y: scroll;
+  
+            .courses {
+                height: auto;
+  
+                .inner {
+                    height: auto;
+                    background: none;
+                  
+                    .course_card {
+                      box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+                      margin-bottom: 40px;
+                    }
+                }
+            }
+        
+    }
+}
+
+ // High end Tablet Portrait
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1024px) 
+and (min-device-height: 1366px) 
+and (max-device-height: 1366px) 
+and (orientation: portrait) {
+    .courses_container {
+        left: 0;
+        height: auto;
+        width: 100vw;
+
+        .courses {
+            height: auto;
+
+            .inner {
+                background: none;
+                height: auto;
+
+                .course_card {
+                    min-height: 400px;
+                    box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+                    margin-bottom: 40px;
+
+                    .icon_button_container {
+                        .icon_container {
+                            height: 100px;
+                            width: 100px;
+
+                            .icon {
+                                font-size: 2.5rem;
+                            }
+                        }
+
+                        .course_button {
+                            .icon {
+                                font-size: 3rem;
+                            }
+
+                            h3 {
+                                font-size: 1.5rem;
+                                left: -35px;
+                                padding: 10px;
+                            }
+                        }
+                    }
+
+                    .instructor {
+                        font-size: 1.5rem;
+                    }
+
+                    .title {
+                        font-size: 2.2rem;
+                    }
+
+                    .time {
+                        font-size: 1.5rem;
+                    }
+
+                    .info {
+                        font-size: 1.5rem;
+                        line-height: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// High end Tablet Landscape
+@media only screen 
+and (min-device-height: 1024px) 
+and (max-device-height: 1024px) 
+and (min-device-width: 1366px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape) {
+    .courses_container {
+        width: 45%;
+        height: auto;
+        left: 0;
+        border-right: 1px solid rgb(182, 182, 182);
+        overflow-y: scroll;
+
+        .courses {
+            height: auto;
+
+            .inner {
+                height: auto;
+                background: none;
+              
+                .course_card {
+                  box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
+                  margin-bottom: 40px;
+                  min-height: 300px;
+                  
+                  .icon_button_container {
+                      .icon_container {
+                            height: 70px;
+                            width: 70px;
+                            .icon {
+                                font-size: 2rem;
+                            }
+                      }
+
+                      .course_button {
+                          .icon {
+                              font-size: 2rem;
+                          }
+
+                          h3 {
+                              font-size: 1.2rem;
+                              left: -40px;
+                          }
+                      }
+                  }
+
+                  .instructor,
+                  .time {
+                    font-size: 0.9rem;
+                  }
+
+                  .title {
+                      font-size: 1.5rem;
+                  }
+
+                  .info {
+                      font-size: 1.1rem;
+                      line-height: 1.5rem;
+                  }
+                }
+            }
+        }
+    
+}
+}
+
+// Laptop
+@media screen 
+and (min-device-width: 1200px) 
+and (max-device-width: 1680px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+    .courses_container {
+        left: 17vw;
+        width: 28vw;
 
         .courses {
             .inner {
                 .course_card {
                     min-height: 30%;
-                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}
+// 4k
+@media screen 
+and (min-device-width: 2400px) 
+and (max-device-width: 3200px) {
+    .courses_container {
+        width: 28vw;
+
+        .courses {
+            .inner {
+                .course_card {
+                    min-height: 30%;
+          
 
                     .icon_button_container {
-
                         .icon_container {
                             height: 90px;
                             width: 90px;
@@ -160,7 +503,6 @@
                         }
 
                         .course_button {
-
                             .icon {
                                 font-size: 3.2rem;
                             }
@@ -191,96 +533,5 @@
                 }
             }
         }
-    }
-}
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-
-// Tablets
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1366px) {
-    .courses_container {
-        left: 0;
-        top:   8vh;
-        width: 50vw;
-        
-        height: auto;
-
-        .courses {
-            padding: 0;
-            height: auto;
-
-            .inner {
-                padding: 15px;
-                height: auto;
-
-                .course_card {
-
-                }
-            }
-        }
-    }
-}
-
-
-
-// Phone
-@media screen and (max-width: 430px) {
-    .courses_container {
-        width: 100vw;
-        left: 0;
-        height: 100vh;
-        justify-content: flex-start;
-        align-items: flex-start;
-
-        .courses {
-            width: 100%;
-            height: auto;
-            transition: 0.3s all ease-in-out;
-
-            .inner {
-                height: auto;
-                padding: 20px 20px;
-                background: none;
-
-                .course_card {
-                    box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
-                }
-            }
-        }
-
-        .courses_slide {
-            transform: translateX(-100%);
-        }
-    }
-
-    .posts_back_button_mobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 40px;
-        width: 80px;
-        position: absolute;
-        left: 20px;
-        top: -10px;
-        z-index: 5;
-        border-radius: 20px;
-        background: white;
-        box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
-
-        transition: 0.3s all ease-in-out;
-        opacity: 0;
-
-        h3 {
-            font-family: "Arvo", serif;
-            font-weight: 400;
-            margin-left: 5px;
-        }
-    }
-
-    .show_mobile_back_button {
-        top: 20px;
-        left: 20px;
-        opacity: 1;
     }
 }

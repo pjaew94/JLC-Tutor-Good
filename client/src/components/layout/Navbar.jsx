@@ -17,7 +17,6 @@ import "../styles/Navbar.scss";
 import courage from "../../svgs/courage.jpg";
 
 const Navbar = ({ logout, auth: { isAuthenticated, loading, user } }) => {
-  const [showLogout, setShowLogout] = useState(false);
 
   const [navState, setNavState] = useState('courses');
 
@@ -37,7 +36,7 @@ const Navbar = ({ logout, auth: { isAuthenticated, loading, user } }) => {
           </div>
 
           <ul>
-            <li>
+            {/* <li>
               <Link
                 className={`link ${navState === 'profile' ? 'selected' : null}`}
                 to="/profile"
@@ -49,7 +48,7 @@ const Navbar = ({ logout, auth: { isAuthenticated, loading, user } }) => {
                 </IconContext.Provider>
                 Profile
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 className={`link ${navState === 'courses' ? 'selected' : null}`}
@@ -63,7 +62,7 @@ const Navbar = ({ logout, auth: { isAuthenticated, loading, user } }) => {
                 Courses
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 className={`link ${navState === 'teachers' ? 'selected' : null}`}
                 to="/teachers"
@@ -75,7 +74,7 @@ const Navbar = ({ logout, auth: { isAuthenticated, loading, user } }) => {
                 </IconContext.Provider>
                 Teachers
               </Link>
-            </li>
+            </li> */}
             {!loading && user !== null && user.status === "Admin" ? (
               <li>
                 <Link
@@ -88,21 +87,21 @@ const Navbar = ({ logout, auth: { isAuthenticated, loading, user } }) => {
                 </Link>
               </li>
             ) : null}
+
+            <li>
+            <a className="link" href="/" onClick={logout}>
+            <IconContext.Provider value={{ className: "icon" }}>
+                  <AiOutlineLogout />
+                </IconContext.Provider>
+                Log Out
+
+              </a>
+            </li>
           </ul>
 
           <div
             className="user"
-            onMouseEnter={() => setShowLogout(!showLogout)}
-            onMouseLeave={() => setShowLogout(!showLogout)}
           >
-            <div className={showLogout ? "show_logout" : "hide_logout"}>
-              <a className="link" href="/" onClick={logout}>
-                Log Out
-                <IconContext.Provider value={{ className: "icon" }}>
-                  <AiOutlineLogout />
-                </IconContext.Provider>
-              </a>
-            </div>
             <div className="user_block">
               <img src={courage} alt="prof pic"></img>
               <div className="user_info">

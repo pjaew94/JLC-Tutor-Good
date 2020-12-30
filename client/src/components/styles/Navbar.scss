@@ -80,40 +80,6 @@
         width: 100%;
         position: relative;
 
-        .show_logout,
-        .hide_logout {
-            @extend %center_flex;
-
-            height: 30px;
-            width: 120px;
-            transition: 0.3s all ease-in;
-            position: absolute;
-            top: 20%;
-            left: 35%;
-            z-index: 1;
-            a {
-                @extend %minor_small;
-                transition: 0.3s all ease-in;
-                font-size: 1rem;
-                color: $gray_text;
-
-                &:hover {
-                    color: black;
-                }
-
-                .icon {
-                    margin-left: 8px;
-                    transform: translateY(2px);
-                }
-            }
-        }
-
-        .show_logout {
-            position: absolute;
-            left: 100%;
-            z-index: 1;
-        }
-
         .user_block {
             display: flex;
             height: auto;
@@ -123,10 +89,6 @@
             border-radius: 10px;
             background: white;
             z-index: 2;
-
-            &:hover {
-                @extend %box_shadow;
-            }
 
             img {
                 height: 40px;
@@ -155,95 +117,173 @@
     }
 }
 
-// Retina Screens Laptop
-@media screen and (min-device-width: 1930px) and (max-device-width: 2880px) {
+// Phone portrait
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: portrait) {
     .navbar {
-        padding: 5% 8%;
-        align-items: center;
-        .navbar_logo {
-            width: 20vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        display: none;
+    }
+}
 
+// Phone landscape
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: landscape) {
+    .navbar {
+        display: none;
+    }
+}
+
+// Low end Tablet Portrait
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1366px) 
+and (min-height: 1024px) 
+and (orientation: portrait) {
+    .navbar {
+        display: none;
+    }
+}
+
+// Low end Tablet landscape
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .navbar {
+          display: none;
+      }
+  }
+
+  // Mid Tablet Portrait
+@media only screen 
+and (min-device-width: 823px) 
+and (max-device-width: 823px) 
+and (min-device-height: 1112px) 
+and (max-device-height: 1112px) 
+and (orientation: portrait) {
+    .navbar {
+        display: none;
+    }
+}
+
+// Mid Tablet Landscape
+@media only screen 
+and (min-device-height: 823px) 
+and (max-device-height: 823px) 
+and (min-device-width: 1112px) 
+and (max-device-width: 1112px) 
+and (orientation: landscape) {
+    .navbar {
+        display: none;
+    }
+}
+
+// High end Tablet Portrait
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1024px) 
+and (min-device-height: 1366px) 
+and (max-device-height: 1366px) 
+and (orientation: portrait) {
+    .navbar {
+        display: none;
+    }
+}
+
+// High end Tablet Landscape
+@media only screen 
+and (min-device-height: 1024px) 
+and (max-device-height: 1024px) 
+and (min-device-width: 1366px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape) {
+    .navbar {
+        display: none;
+    }
+}
+
+// Laptop
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1680px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .navbar {
+          width: 17vw;
+          padding: 5% 0 5% 4%;
+
+          ul {
+              
+          }
+
+      }
+  }
+
+
+// 4k
+@media screen 
+and (min-device-width: 2400px) 
+and (max-device-width: 3200px) {
+    .navbar {
+        width: 20vw;
+        padding: 5% 4%;
+
+        .navbar_logo {
+            width: 100%;
             .hexagon {
-                font-size: 4rem;
+                font-size: 3rem;
             }
 
             span {
-                font-size: 3rem;
+                font-size: 2.7rem;
             }
         }
 
         ul {
             transform: translateY(-300px);
+            width: 100%;
+            align-items: flex-start;
 
             li {
-                width: 300px;
-                margin-bottom: 60px;
+                width: 100%;
+                justify-content: flex-start;
+                margin-bottom: 50px;
+                justify-content: center;
+
 
                 .link {
-                    font-size: 2.1rem;
-
+                    font-size: 2rem;
                     .icon {
-                        font-size: 2.3rem;
+                        font-size: 2rem;
                     }
                 }
             }
         }
 
         .user {
-            width: 10vw;
-            .show_logout,
-            .hide_logout {
-                height: 50px;
-                width: 200px;
-
-                a {
-                    font-size: 2rem;
-
-                    .icon {
-                        font-size: 2rem;
-                    }
-                }
-            }
-
             .user_block {
+                padding: 10px;
+
                 img {
                     height: 80px;
                     width: 80px;
+
                 }
 
                 .user_info {
-                    font-size: 2rem;
+                    margin-left: 30px;
+
+                    font-size: 1.5rem;
 
                     span {
-                        font-size: 1.5rem;
+                        font-size: 1rem;
                     }
                 }
             }
         }
-    }
-}
-
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-    .navbar {
-        display: none;
-    }
-}
-
-/* Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-    .navbar {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 430px) {
-    .navbar {
-        display: none;
     }
 }

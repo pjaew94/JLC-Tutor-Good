@@ -171,197 +171,54 @@
     }
 
 }
-// Retina Screens Laptop
-@media screen 
-    and (min-device-width: 1930px) 
-    and (max-device-width: 2880px)  {
-        .recommendations {
-            width: 25vw;
-        }
-    }
 
-@media screen and (max-width: 430px) {
+// Phone portrait
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and(orientation: portrait) {
     .recommendations {
         display: none;
     }
 }
 
-
-// Retina Screens Laptop
-@media screen 
-    and (min-device-width: 1930px) 
-    and (max-device-width: 2880px)  {
-        .recommendations {
-
-            .apps {
-
-                .title {
-                    font-size: 3rem;
-
-                    span {
-                        font-size: 3rem;
-                    }
-                }
-
-                .apps_container {
-
-                    .app_card {
-                        width: 90%;
-                        margin-bottom: 25px;
-
-                        .logo {
-                            height: 90px;
-                            width: 90px;
-
-                            .icon {
-                                font-size: 2rem;
-                            }
-                        }
-
-                        .content {
-
-                            h2 {
-                                font-size: 1.5rem;
-                            }
-                            h3 {
-                                font-size: 1.6rem;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .books {
-
-                .title {
-                    font-size: 3rem;
-                    span {
-                        font-size: 3rem;
-                    }
-                }
-
-                .books_container {
-
-                    .book_card {
-                        margin-bottom: 30px;
-                        padding: 15px 30px;
-
-
-                        .content {
-                            h2 {
-                                font-size: 2rem;
-                                span {
-                                    font-size: 1.5rem;
-                                }
-                            }
-                            h3 {
-                                font-size: 1.5rem;
-                            }
-                        }
-
-                        img {
-                            height: 230px;
-                        }
-                    }
-                }
-                
-            }
-        }
-    }
-
-
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+// Phone landscape
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and(orientation: landscape) {
     .recommendations {
-        left: 0;
-        top: 50vh;
-        flex-direction: row;
-        width: 100vw;
-
+        display: none;
     }
 }
 
-/* Landscape */
+// Low end Tablet Portrait
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (min-height: 1024px) and  (orientation: portrait) {
+    .recommendations {
+        display: none;
+    }
+}
+
+// Low end Tablet landscape
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
     .recommendations {
-        right: 0;
-        top: 5vh;
-        left: 65vw;
-        flex-direction: column;
-        width: 35vw;
+        display: none;
+    }      
+  }
 
-        .apps {
-            padding: 0;
 
-            .title {
-                margin-bottom: 20px;
-            }
+  @media only screen and (min-device-height: 823px) and (max-device-height: 823px) and (min-width: 1112px) and (max-width: 1112px) and (orientation: landscape) {
+      .recommendations {
+          display: none;
+      }
+  }
 
-            .apps_container {
-
-                .app_card {
-                    margin-bottom: 10px;
-                    padding: 5px;
-
-                    .logo {
-                        height: 40px;
-                        width: 40px;
-
-                        .icon {
-                            font-size: 1rem;
-                        }
-                    }
-
-                    .content {
-                        h2 {
-                            font-size: 0.7rem;
-                        }
-
-                        h3 {
-                            font-size: 0.7rem;
-                        }
-                    }
-                }
-            }
-        }
-
-        .books {
-            padding: 20px;
-
-            .title {
-                margin-bottom: 10px;
-            }
-
-            .books_container {
-
-                .book_card {
-                    padding: 8px 15px;
-
-                    .content {
-                        margin-right: 20px;
-                        h2 {
-                            font-size: 0.8rem;
-
-                            span {
-                                font-size: 0.6rem;
-                            }
-                        }
-
-                        h3 {
-                            font-size: 0.7rem;
-                        }
-                    }
-                }
-            }
-        }
+// High end Tablet Landscape
+@media only screen 
+and (min-device-height: 1024px) 
+and (max-device-height: 1024px) 
+and (min-device-width: 1366px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape) {
+    .recommendations {
+        display: none;
     }
 }
