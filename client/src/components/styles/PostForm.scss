@@ -132,107 +132,98 @@
     }
 }
 
-// Retina Screens Laptop
-@media screen 
-    and (min-device-width: 1930px) 
-    and (max-device-width: 2880px)  {
-        .post_form_container {
-            margin-bottom: 40px;
-
-            .title {
-                width: 80%;
-                
-                h1 {
-                    font-size: 3rem;
-                }
-
-                .add_icon {
-                    height: 70px;
-                    width: 70px;
-                    padding: 10px;
-                    .icon {
-                        font-size: 3rem;
-                    }
-                }
-            }
-
-            .form {
-                min-height: 400px;
-                height: auto;
-                padding: 30px 30px;
-
-                h3, h4 {
-                    font-size: 1.5rem;
-                }
-
-                .due {
-                    margin-bottom: 20px;
-
-                    .due_text {
-                        h4 {
-                            font-size: 1.2rem;
-                        }
-                    }
-
-                    input {
-                        width: 50%;
-                        font-size: 1.5rem;
-                        height: 2rem;
-                        border: 2px solid rgb(85, 85, 85);
-                    }
-
-                    
-                }
-                .homework {
-                    margin-bottom: 20px;
-                    textarea {
-                        min-height: 250px;
-                        font-size: 1.5rem;
-                        border: 2px solid rgb(85, 85, 85);
-                    }
-                }
-
-                .button_container {
-                    height: 110px;
-
-                    .button {
-                        height: 100%;
-                        width: 170px;
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                    }
-                }
-
-            }
-        }
-    }
-
-// Iphone X
-@media screen and (max-width: 430px) {
-
+// Phone portrait
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: portrait) {
     .post_form_container {
+        width: 100%;
+        padding: 0 6%;
+
         .title {
             width: 100%;
-
-            .add_icon {
-                box-shadow: 0 1px 15px -5px rgb(148, 148, 148);
-
-                &:hover {
-                    background: white;
-                    color: black;
-                }
-            }
-        }
-
-        .form {
-            .button_container {
-
-                .button {
-                    background: rgb(85, 85, 85);
-                    color: white;
-
-                }
-            }
         }
     }
+}
+
+// Phone landscape
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: landscape) {
+
+}
+
+// Low end Tablet Portrait
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1366px) 
+and (min-height: 1024px) 
+and (orientation: portrait) {
+
+}
+
+// Low end Tablet landscape
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+// Mid Tablet Portrait
+@media only screen 
+and (min-device-width: 823px) 
+and (max-device-width: 823px) 
+and (min-device-height: 1112px) 
+and (max-device-height: 1112px) 
+and (orientation: portrait) {
+
+}
+
+// Mid Tablet Landscape
+@media only screen 
+and (min-device-height: 823px) 
+and (max-device-height: 823px) 
+and (min-device-width: 1112px) 
+and (max-device-width: 1112px) 
+and (orientation: landscape) {
+
+}
+
+ // High end Tablet Portrait
+ @media only screen 
+ and (min-device-width: 1024px) 
+ and (max-device-width: 1024px) 
+ and (min-device-height: 1366px) 
+ and (max-device-height: 1366px) 
+ and (orientation: portrait) {
+
+ }
+
+ // High end Tablet Landscape
+@media only screen 
+and (min-device-height: 1024px) 
+and (max-device-height: 1024px) 
+and (min-device-width: 1366px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape) {
+
+}
+
+// Laptop
+@media screen 
+and (min-device-width: 1200px) 
+and (max-device-width: 1680px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+// 4k
+@media screen 
+and (min-device-width: 2400px) 
+and (max-device-width: 3200px) {
+    
 }

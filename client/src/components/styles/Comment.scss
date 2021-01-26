@@ -69,71 +69,91 @@
 }
 
 
-// Retina Screens Laptop
-@media screen 
-    and (min-device-width: 1930px) 
-    and (max-device-width: 2880px)  {
-        .comment {
-            justify-content: flex-end;
-            min-height: 100px;
-            padding: 10px 15px;
-            border-left: none;
-            
-            .delete_edit_comment {
-                left: -60px;
-                width: 100px;
-                height: 120px;
-
-                .edit_container,
-                .delete_container {
-
-                    .icon {
-                        font-size: 2rem;
-                    }
-                }
-            }
-
-            .comment_container {
-                flex-direction: column;
-                width: 95%;
-                h3 {
-                    min-height: 100px;
-                    height: auto;
-                    font-size: 1.5rem;
-                    width: 100%;
-                    border-left: 3px solid #ebbcaf;
-                    padding-left: 30px;
-
-                }
-
-                .by {
-                    align-items: flex-start;
-                    padding-left: 30px;
-                    
-                    h4 {
-                        font-size: 1.4rem;
-                    }
-                }
-            }
-        }
-    }
-
-
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-
-/* Portrait and Landscape */
+// Phone portrait
 @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: portrait) {
+    
+}
+
+// Phone landscape
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: landscape) {
 
 }
 
-/* Landscape */
+// Low end Tablet Portrait
 @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+and (min-device-width: 768px) 
+and (max-device-width: 1366px) 
+and (min-height: 1024px) 
+and (orientation: portrait) {
 
+}
+
+// Low end Tablet landscape
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+// Mid Tablet Portrait
+@media only screen 
+and (min-device-width: 823px) 
+and (max-device-width: 823px) 
+and (min-device-height: 1112px) 
+and (max-device-height: 1112px) 
+and (orientation: portrait) {
+
+}
+
+// Mid Tablet Landscape
+@media only screen 
+and (min-device-height: 823px) 
+and (max-device-height: 823px) 
+and (min-device-width: 1112px) 
+and (max-device-width: 1112px) 
+and (orientation: landscape) {
+
+}
+
+ // High end Tablet Portrait
+ @media only screen 
+ and (min-device-width: 1024px) 
+ and (max-device-width: 1024px) 
+ and (min-device-height: 1366px) 
+ and (max-device-height: 1366px) 
+ and (orientation: portrait) {
+
+ }
+
+ // High end Tablet Landscape
+@media only screen 
+and (min-device-height: 1024px) 
+and (max-device-height: 1024px) 
+and (min-device-width: 1366px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape) {
+
+}
+
+// Laptop
+@media screen 
+and (min-device-width: 1200px) 
+and (max-device-width: 1680px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+// 4k
+@media screen 
+and (min-device-width: 2400px) 
+and (max-device-width: 3200px) {
+    
 }

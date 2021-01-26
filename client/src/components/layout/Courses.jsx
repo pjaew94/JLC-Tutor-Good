@@ -123,8 +123,6 @@ const Courses = ({
           </div>
         </div>
       </div>
-
-      {/* {isMobile && mobileBackButton} */}
     </Fragment>
   );
 };

@@ -60,54 +60,105 @@
     }
 }
 
-// Retina Screens Laptop
-@media screen 
-    and (min-device-width: 1930px) 
-    and (max-device-width: 2880px)  {
-        .posts_route_container {
-            width: 25vw;
-            left: 50vw;
 
-            .posts_route_inner_container {
-                
-            }
-
-            .no_post_container {
-
-                h1 {
-                    font-size: 2rem;
-                }
-            }
-
-        }
-    }
-
-@media screen and (max-width: 430px) {
+// Phone portrait
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: portrait) {
     .posts_route_container {
         width: 100vw;
-        height: auto;
-        top: 8vh;
         left: 0;
-        padding: 3%;
-        overflow-y: visible;
+        top: 9vh;
+        margin: 0;
+        overflow: hidden;
+        height: auto;
+        padding: 0;
+
+        .posts_route_inner_container {
+
+            
+        }
     }
 }
 
-/* ----------- iPad 1, 2, Mini and Air ----------- */
-
-/* Portrait and Landscape */
+// Phone landscape
 @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+and (min-device-width: 320px) 
+and (max-device-width: 812px) 
+and(orientation: landscape) {
+    
+}
+
+// Low end Tablet Portrait
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1366px) 
+and (min-height: 1024px) 
+and (orientation: portrait) {
 
 }
 
-/* Landscape */
+// Low end Tablet landscape
 @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 1) {
 
+}
+
+// Mid Tablet Portrait
+@media only screen 
+and (min-device-width: 823px) 
+and (max-device-width: 823px) 
+and (min-device-height: 1112px) 
+and (max-device-height: 1112px) 
+and (orientation: portrait) {
+
+}
+
+// Mid Tablet Landscape
+@media only screen 
+and (min-device-height: 823px) 
+and (max-device-height: 823px) 
+and (min-device-width: 1112px) 
+and (max-device-width: 1112px) 
+and (orientation: landscape) {
+
+}
+
+ // High end Tablet Portrait
+ @media only screen 
+ and (min-device-width: 1024px) 
+ and (max-device-width: 1024px) 
+ and (min-device-height: 1366px) 
+ and (max-device-height: 1366px) 
+ and (orientation: portrait) {
+
+ }
+
+ // High end Tablet Landscape
+@media only screen 
+and (min-device-height: 1024px) 
+and (max-device-height: 1024px) 
+and (min-device-width: 1366px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape) {
+
+}
+
+// Laptop
+@media screen 
+and (min-device-width: 1200px) 
+and (max-device-width: 1680px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+// 4k
+@media screen 
+and (min-device-width: 2400px) 
+and (max-device-width: 3200px) {
+    
 }
